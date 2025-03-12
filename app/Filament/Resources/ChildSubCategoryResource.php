@@ -24,7 +24,7 @@ use Filament\Forms\Components\Toggle;
 class ChildSubCategoryResource extends Resource
 {
     protected static ?string $model = ChildSubCategory::class;
-    protected static ?string $navigationGroup = 'Quản lý sản phẩm';
+    protected static ?string $navigationGroup = 'Quản lý danh mục';
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
     protected static ?string $navigationLabel = 'Danh mục con cấp 2';

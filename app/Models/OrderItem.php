@@ -22,8 +22,8 @@ class OrderItem extends Model
     }
 
     // Quan hệ với Product (giả sử bạn có model Product)
-    // public function product()
-    // {
-    //     return $this->belongsTo(Product::class);
-    // }
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

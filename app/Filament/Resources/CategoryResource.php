@@ -27,7 +27,7 @@ class CategoryResource extends Resource
     protected static ?string $navigationLabel = 'Danh mục sản phẩm';
     protected static ?string $pluralModelLabel = 'Danh mục sản phẩm';
     protected static ?string $modelLabel = 'Danh mục';
-    protected static ?string $navigationGroup = 'Quản lý sản phẩm';
+    protected static ?string $navigationGroup = 'Quản lý danh mục';
 
 
     public static function form(Form $form): Form

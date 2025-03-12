@@ -26,6 +26,13 @@ class Product extends Model
         'is_hot',
         'is_new',
     ];
+    protected $casts = [
+        'attributes' => 'array',
+        'additional_images' => 'array',
+        
+    ];
+
+ 
 
     // Nếu có quan hệ với các bảng khác:
     public function category()
