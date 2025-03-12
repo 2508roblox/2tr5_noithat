@@ -1,0 +1,78 @@
+{
+  "unloginbox": {
+    "login": "Đăng nhập",
+    "anonymous": "Ẩn danh",
+    "tips": "Vui lòng đăng nhập để tiếp tục trò chuyện"
+  },
+  "chathead": {
+    "welcome": "Trò chuyện ngay với "
+  },
+  "chatheader": {
+    "hello": "Xin chào!",
+    "welcome": "Rất vui khi được hỗ trợ bạn",
+    "chatpc": "Tiếp tục cuộc trò chuyện trên Zalo PC",
+    "setupwidget": "Thêm Zalo Chat Widget vào trang web của bạn",
+    "onnoti": "Mở thông báo",
+    "offnoti": "Tắt thông báo",
+    "report": "Báo cáo cuộc trò chuyện",
+    "end": "Kết thúc cuộc trò chuyện",
+    "chatzalo": "Tiếp tục cuộc trò chuyện bằng tài khoản Zalo"
+  },
+  "chatbox": {
+    "placeholder": "Nhập tin nhắn, nhấn Enter để gửi..."
+  },
+  "network": {
+    "offline": "Không thể kết nối đến máy chủ. Vui lòng kiểm tra đường truyền",
+    "connecting": "Đang kết nối",
+    "error": "Không thể kết nối đến máy chủ. Vui lòng thử lại sau"
+  },
+  "welcomebox": {
+    "hint": "Bắt đầu trò chuyện với <oa_name>",
+    "aszalo": "Chat bằng Zalo",
+    "asguest": "Chat nhanh"
+  },
+  "loginbox": {
+    "hint": "Sử dụng Zalo của bạn để trò chuyện giúp chúng tôi hỗ trợ tốt hơn.",
+    "login": "Đăng nhập"
+  },
+  "lang": {
+    "chooselang": "Lựa chọn ngôn ngữ:",
+    "vie": "Tiếng Việt",
+    "eng": "English"
+  },
+  "followbox": {
+    "hint": "Quan tâm để cập nhật các thông tin hữu ích từ",
+    "follow": "Quan tâm"
+  },
+  "reply": {
+    "reply": "Trả lời",
+    "image": "Hình ảnh",
+    "video": "Video",
+    "audio": "Âm thanh",
+    "file": "File",
+    "sticker": "Sticker",
+    "link": "Link"
+  },
+  "messageowner": {
+    "guest": "Khách ẩn danh"
+  },
+  "chathistory": {
+    "title": "Lịch sử trò chuyện",
+    "oldmessage": "tin nhắn cũ",
+    "oldmessages": "tin nhắn cũ",
+    "view": "Xem chi tiết"
+  },
+  "messagestatus": {
+    "typing": " đang nhập tin nhắn",
+    "sending": "Đang gửi...",
+    "sent": "Đã gửi",
+    "received": "Đã nhận",
+    "seen": "Đã xem",
+    "error": "Không gửi được",
+    "errorTooBigFile": "Không gửi được do dung lượng tập tin vượt quá cho phép (tối đa 100MB)",
+    "errorTooBigPhoto": "Không gửi được do dung lượng tập tin photo vượt quá cho phép (tối đa 4MB)"
+  },
+  "dragdropzone": {
+    "drop": "Thả"
+  }
+}
