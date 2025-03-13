@@ -117,17 +117,21 @@
                                                 data-id="43498f9" data-element_type="widget"
                                                 data-widget_type="wd_wc_breadcrumb.default">
                                                 <div class="elementor-widget-container">
-                                                    <nav class="wd-breadcrumbs woocommerce-breadcrumb"
-                                                        aria-label="Breadcrumb"> <span typeof="v:Breadcrumb"
-                                                            class=" wd-last-link">
-                                                            <a href="https://shop.phanhoanggia.com" rel="v:url"
-                                                                property="v:title">
-                                                                Trang chủ </a>
+                                                    <nav class="wd-breadcrumbs woocommerce-breadcrumb" aria-label="Breadcrumb">
+                                                        <span typeof="v:Breadcrumb">
+                                                            <a href="{{ url('/') }}" rel="v:url" property="v:title">Trang chủ</a>
                                                         </span>
-                                                        <span class="wd-delimiter"></span> <span class="wd-last">
-                                                            Bếp điện hồng ngoại </span>
+                                                
+                                                        @foreach($this->getBreadcrumb() as $breadcrumb)
+                                                            <span class="wd-delimiter"> / </span>
+                                                            <span typeof="v:Breadcrumb">
+                                                                <a href="{{ route('category', ['slug' => $breadcrumb['slug']]) }}" rel="v:url"
+                                                                   property="v:title">{{ $breadcrumb['name'] }}</a>
+                                                            </span>
+                                                        @endforeach
                                                     </nav>
                                                 </div>
+                                                
                                             </div>
                                             <div class="elementor-element elementor-element-f9b0f02 elementor-widget__width-auto wd-shop-result-count elementor-widget elementor-widget-wd_shop_archive_result_count"
                                                 data-id="f9b0f02" data-element_type="widget"
@@ -165,137 +169,29 @@
                                                                     <div id="woocommerce_price_filter-5"
                                                                         class="wd-widget widget sidebar-widget woocommerce widget_price_filter">
                                                                         <h5 class="widget-title">LỌC THEO GIÁ</h5>
-                                                                        <form method="get"
-                                                                            action="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/">
+                                                                        <form method="get" action="{{ url()->current() }}">
                                                                             <div class="price_slider_wrapper">
-                                                                                <div class="price_slider"
-                                                                                    style="display:none;"></div>
-                                                                                <div class="price_slider_amount"
-                                                                                    data-step="10">
-                                                                                    <label class="screen-reader-text"
-                                                                                        for="min_price">Giá thấp
-                                                                                        nhất</label>
-                                                                                    <input type="text" id="min_price"
-                                                                                        name="min_price" value="1265000"
-                                                                                        data-min="1265000"
+                                                                                <div class="price_slider" style="display:none;"></div>
+                                                                                <div class="price_slider_amount" data-step="10">
+                                                                                    <label class="screen-reader-text" for="min_price">Giá thấp nhất</label>
+                                                                                    <input type="text" id="min_price" name="min_price" value="{{ request('min_price') }}" data-min="1265000"
                                                                                         placeholder="Giá thấp nhất" />
-                                                                                    <label class="screen-reader-text"
-                                                                                        for="max_price">Giá cao nhất</label>
-                                                                                    <input type="text" id="max_price"
-                                                                                        name="max_price" value="17230000"
-                                                                                        data-max="17230000"
+                                                                        
+                                                                                    <label class="screen-reader-text" for="max_price">Giá cao nhất</label>
+                                                                                    <input type="text" id="max_price" name="max_price" value="{{ request('max_price') }}" data-max="17230000"
                                                                                         placeholder="Giá cao nhất" />
-                                                                                    <button type="submit"
-                                                                                        class="button">Lọc</button>
-                                                                                    <div class="price_label"
-                                                                                        style="display:none;">
-                                                                                        Giá: <span class="from"></span>
-                                                                                        &mdash; <span class="to"></span>
+                                                                        
+                                                                                    <button type="submit" class="button">Lọc</button>
+                                                                                    <div class="price_label" style="display:none;">
+                                                                                        Giá: <span class="from"></span> &mdash; <span class="to"></span>
                                                                                     </div>
                                                                                     <div class="clear"></div>
                                                                                 </div>
                                                                             </div>
                                                                         </form>
+                                                                        
                                                                     </div>
-                                                                    <div id="woodmart-woocommerce-layered-nav-6"
-                                                                        class=" wd-widget-collapse wd-widget widget sidebar-widget woodmart-woocommerce-layered-nav">
-                                                                        <h5 class="widget-title">LỌC THEO THƯƠNG HIỆU</h5>
-                                                                        <div class="wd-scroll">
-                                                                            <ul
-                                                                                class="wd-swatches-filter wd-filter-list wd-labels-on wd-size-normal wd-layout-list wd-text-style-1 wd-swatches-brands wd-scroll-content">
-                                                                                <li
-                                                                                    class="wc-layered-nav-term wd-swatch-wrap">
-                                                                                    <a rel="nofollow noopener"
-                                                                                        href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/?filter_brand=bosch"
-                                                                                        class="layered-nav-link"><span
-                                                                                            class="wd-swatch wd-bg"><span
-                                                                                                class="wd-swatch-bg"
-                                                                                                style=""><img loading="lazy"
-                                                                                                    width="200" height="100"
-                                                                                                    src="/assets/wp-content/uploads/2023/04/logo-bosch.png"
-                                                                                                    class="attachment-full size-full"
-                                                                                                    alt="Logo Bosch"
-                                                                                                    decoding="async"
-                                                                                                    srcset="/assets/wp-content/uploads/2023/04/logo-bosch.png 200w, https://shop.phanhoanggia.com/wp-content/uploads/2023/04/logo-bosch-150x75.png 150w"
-                                                                                                    sizes="(max-width: 200px) 100vw, 200px" /></span><span
-                                                                                                class="wd-swatch-text">Bosch</span></span><span
-                                                                                            class="wd-filter-lable layer-term-lable">Bosch</span></a>
-                                                                                    <span class="count">3</span></li>
-                                                                                <li
-                                                                                    class="wc-layered-nav-term wd-swatch-wrap">
-                                                                                    <a rel="nofollow noopener"
-                                                                                        href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/?filter_brand=canzy"
-                                                                                        class="layered-nav-link"><span
-                                                                                            class="wd-swatch wd-bg"><span
-                                                                                                class="wd-swatch-bg"
-                                                                                                style=""><img loading="lazy"
-                                                                                                    width="200" height="100"
-                                                                                                    src="/assets/wp-content/uploads/2023/04/logo-canzy.png"
-                                                                                                    class="attachment-full size-full"
-                                                                                                    alt="Logo Canzy"
-                                                                                                    decoding="async"
-                                                                                                    srcset="/assets/wp-content/uploads/2023/04/logo-canzy.png 200w, https://shop.phanhoanggia.com/wp-content/uploads/2023/04/logo-canzy-150x75.png 150w"
-                                                                                                    sizes="(max-width: 200px) 100vw, 200px" /></span><span
-                                                                                                class="wd-swatch-text">Canzy</span></span><span
-                                                                                            class="wd-filter-lable layer-term-lable">Canzy</span></a>
-                                                                                    <span class="count">9</span></li>
-                                                                                <li
-                                                                                    class="wc-layered-nav-term wd-swatch-wrap">
-                                                                                    <a rel="nofollow noopener"
-                                                                                        href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/?filter_brand=chefs"
-                                                                                        class="layered-nav-link"><span
-                                                                                            class="wd-swatch wd-bg"><span
-                                                                                                class="wd-swatch-bg"
-                                                                                                style=""><img loading="lazy"
-                                                                                                    width="200" height="100"
-                                                                                                    src="/assets/wp-content/uploads/2023/04/logo-chefs.png"
-                                                                                                    class="attachment-full size-full"
-                                                                                                    alt="Logo Chef&#039;s"
-                                                                                                    decoding="async"
-                                                                                                    srcset="/assets/wp-content/uploads/2023/04/logo-chefs.png 200w, https://shop.phanhoanggia.com/wp-content/uploads/2023/04/logo-chefs-150x75.png 150w"
-                                                                                                    sizes="(max-width: 200px) 100vw, 200px" /></span><span
-                                                                                                class="wd-swatch-text">Chef&#039;s</span></span><span
-                                                                                            class="wd-filter-lable layer-term-lable">Chef&#039;s</span></a>
-                                                                                    <span class="count">4</span></li>
-                                                                                <li
-                                                                                    class="wc-layered-nav-term wd-swatch-wrap">
-                                                                                    <a rel="nofollow noopener"
-                                                                                        href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/?filter_brand=eurosun"
-                                                                                        class="layered-nav-link"><span
-                                                                                            class="wd-swatch wd-bg"><span
-                                                                                                class="wd-swatch-bg"
-                                                                                                style=""><img loading="lazy"
-                                                                                                    width="200" height="100"
-                                                                                                    src="/assets/wp-content/uploads/2023/04/logo-eurosun.png"
-                                                                                                    class="attachment-full size-full"
-                                                                                                    alt="Logo Eurosun"
-                                                                                                    decoding="async"
-                                                                                                    srcset="/assets/wp-content/uploads/2023/04/logo-eurosun.png 200w, https://shop.phanhoanggia.com/wp-content/uploads/2023/04/logo-eurosun-150x75.png 150w"
-                                                                                                    sizes="(max-width: 200px) 100vw, 200px" /></span><span
-                                                                                                class="wd-swatch-text">Eurosun</span></span><span
-                                                                                            class="wd-filter-lable layer-term-lable">Eurosun</span></a>
-                                                                                    <span class="count">2</span></li>
-                                                                                <li
-                                                                                    class="wc-layered-nav-term wd-swatch-wrap">
-                                                                                    <a rel="nofollow noopener"
-                                                                                        href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/?filter_brand=fagor"
-                                                                                        class="layered-nav-link"><span
-                                                                                            class="wd-swatch wd-bg"><span
-                                                                                                class="wd-swatch-bg"
-                                                                                                style=""><img loading="lazy"
-                                                                                                    width="200" height="100"
-                                                                                                    src="/assets/wp-content/uploads/2023/04/logo-fagor.png"
-                                                                                                    class="attachment-full size-full"
-                                                                                                    alt="Logo Fagor"
-                                                                                                    decoding="async"
-                                                                                                    srcset="/assets/wp-content/uploads/2023/04/logo-fagor.png 200w, https://shop.phanhoanggia.com/wp-content/uploads/2023/04/logo-fagor-150x75.png 150w"
-                                                                                                    sizes="(max-width: 200px) 100vw, 200px" /></span><span
-                                                                                                class="wd-swatch-text">Fagor</span></span><span
-                                                                                            class="wd-filter-lable layer-term-lable">Fagor</span></a>
-                                                                                    <span class="count">3</span></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
+                                                                    
                                                                     <div id="block-8"
                                                                         class="wd-widget widget sidebar-widget widget_block">
                                                                         <div
@@ -316,9 +212,12 @@
                                                                                                         class="wc-block-grid wp-block-product-on-sale wp-block-woocommerce-product-on-sale wc-block-product-on-sale has-2-columns has-multiple-rows">
                                                                                                         <ul
                                                                                                             class="wc-block-grid__products">
+                                                                                                            @if($discountedProducts)
+                                                                                                            @foreach ($discountedProducts as $product)
+
                                                                                                             <li
                                                                                                                 class="wc-block-grid__product">
-                                                                                                                <a href="/assets/san-pham/may-rua-chen-bat-hafele-hdw-fi60d/"
+                                                                                                                <a href="{{ route('product.detail', ['slug' => $product->slug]) }}"
                                                                                                                     class="wc-block-grid__product-link">
                                                                                                                     <div
                                                                                                                         class="wc-block-grid__product-onsale">
@@ -339,20 +238,14 @@
                                                                                                                             decoding="async"
                                                                                                                             width="600"
                                                                                                                             height="600"
-                                                                                                                            src="/assets/wp-content/uploads/2024/07/HDW-FI60D-600x600.jpg"
+                                                                                                                            src="{{ asset('storage/' . $product->image) }}"
                                                                                                                             class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                                                             alt="Máy rửa chén bát Hafele HDW-FI60D"
-                                                                                                                            srcset="/assets/wp-content/uploads/2024/07/HDW-FI60D-600x600.jpg 600w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D.jpg 900w"
                                                                                                                             sizes="(max-width: 600px) 100vw, 600px" />
                                                                                                                     </div>
                                                                                                                     <div
                                                                                                                         class="wc-block-grid__product-title">
-                                                                                                                        Máy
-                                                                                                                        rửa
-                                                                                                                        chén
-                                                                                                                        bát
-                                                                                                                        Hafele
-                                                                                                                        HDW-FI60D
+                                                                                                                        {{ $product->name }}
                                                                                                                     </div>
                                                                                                                 </a>
                                                                                                                 <div
@@ -365,7 +258,7 @@
                                                                                                                         class="screen-reader-text">Giá
                                                                                                                         gốc
                                                                                                                         là:
-                                                                                                                        25.179.000&nbsp;&#8363;.</span><ins
+                                                                                                                        {{ number_format($product->original_price) }}&nbsp;&#8363;.</span><ins
                                                                                                                         aria-hidden="true"><span
                                                                                                                             class="woocommerce-Price-amount amount">19.828.000&nbsp;<span
                                                                                                                                 class="woocommerce-Price-currencySymbol">&#8363;</span></span></ins><span
@@ -373,24 +266,12 @@
                                                                                                                         hiện
                                                                                                                         tại
                                                                                                                         là:
-                                                                                                                        19.828.000&nbsp;&#8363;.</span>
+                                                                                                                        {{ number_format($product->discounted_price) }}&nbsp;&#8363;.</span>
                                                                                                                 </div>
-                                                                                                                <div
-                                                                                                                    class="wp-block-button wc-block-grid__product-add-to-cart">
-                                                                                                                    <a href="?add-to-cart=27681"
-                                                                                                                        aria-label="Thêm vào giỏ hàng: &ldquo;Máy rửa chén bát Hafele HDW-FI60D&rdquo;"
-                                                                                                                        data-quantity="1"
-                                                                                                                        data-product_id="27681"
-                                                                                                                        data-product_sku="HDW-FI60D"
-                                                                                                                        data-price="19828000"
-                                                                                                                        rel="nofollow"
-                                                                                                                        class="wp-block-button__link  add_to_cart_button ajax_add_to_cart">Thêm
-                                                                                                                        vào
-                                                                                                                        giỏ
-                                                                                                                        hàng</a>
-                                                                                                                </div>
+                                                                                                                
                                                                                                             </li>
-                                                                                                           
+                                                                                                            @endforeach
+                                                                                                           @endif
                                                                                                         </ul>
                                                                                                     </div>
                                                                                                 </div>
@@ -448,24 +329,15 @@
                                                                 data-id="0c9d547" data-element_type="widget"
                                                                 data-widget_type="wd_shop_archive_orderby.default">
                                                                 <div class="elementor-widget-container">
-                                                                    <form
-                                                                        class="woocommerce-ordering wd-style-default wd-ordering-mb-icon"
-                                                                        method="get">
-                                                                        <select name="orderby" class="orderby"
-                                                                            aria-label="Đơn hàng của cửa hàng">
-                                                                            <option value="popularity">Thứ tự theo mức độ
-                                                                                phổ biến</option>
-                                                                            <option value="rating">Thứ tự theo điểm đánh giá
-                                                                            </option>
-                                                                            <option value="date" selected='selected'>Mới
-                                                                                nhất</option>
-                                                                            <option value="price">Thứ tự theo giá: thấp đến
-                                                                                cao</option>
-                                                                            <option value="price-desc">Thứ tự theo giá: cao
-                                                                                xuống thấp</option>
+                                                                    <form class="woocommerce-ordering wd-style-default wd-ordering-mb-icon" method="get">
+                                                                        <select name="orderby" class="orderby" aria-label="Đơn hàng của cửa hàng" onchange="this.form.submit()">
+                                                                            <option value="date" {{ request('orderby') == 'date' ? 'selected' : '' }}>Mới nhất</option>
+                                                                            <option value="price" {{ request('orderby') == 'price' ? 'selected' : '' }}>Thứ tự theo giá: thấp đến cao</option>
+                                                                            <option value="price-desc" {{ request('orderby') == 'price-desc' ? 'selected' : '' }}>Thứ tự theo giá: cao xuống thấp</option>
                                                                         </select>
                                                                         <input type="hidden" name="paged" value="1" />
                                                                     </form>
+                                                                    
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -489,168 +361,88 @@
                                                         data-source="main_loop" data-min_price="" data-max_price=""
                                                         data-columns="4"
                                                         style="--wd-col-lg:4;--wd-col-md:4;--wd-col-sm:2;--wd-gap-lg:20px;--wd-gap-sm:10px;">
-                                                        <div class="wd-product wd-with-labels wd-hover-fw-button wd-hover-with-fade wd-col product-grid-item product type-product post-26178 status-publish instock product_cat-bep-dien-hong-ngoai has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
-                                                            data-loop="1" data-id="26178">
+                                                        @foreach($products as $product)
+                                                        <div class="wd-product wd-with-labels wd-hover-fw-button wd-hover-with-fade wd-col product-grid-item product type-product post-{{ $product->id }} status-publish instock product_cat-{{ $product->category_slug }} has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
+                                                            data-loop="{{ $loop->index }}" data-id="{{ $product->id }}">
                                                             <div class="product-wrapper">
                                                                 <div class="content-product-imagin"></div>
                                                                 <div class="product-element-top wd-quick-shop">
-                                                                    <a href="/assets/san-pham/bep-hong-ngoai-chefs-eh-hl22a/"
-                                                                        class="product-image-link">
+                                                                    <a href="{{ route('product.detail', ['slug' => $product->slug]) }}" class="product-image-link">
                                                                         <div class="wd-product-grid-slider wd-fill">
-                                                                            <div class="wd-product-grid-slide"
-                                                                                data-image-url="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg"
-                                                                                data-image-srcset="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-600x600.jpg 600w"
-                                                                                data-image-id="0"></div>
-                                                                            <div class="wd-product-grid-slide"
-                                                                                data-image-url="/assets/wp-content/uploads/2024/06/EH-HL22A-5.jpg"
-                                                                                data-image-srcset="/assets/wp-content/uploads/2024/06/EH-HL22A-5.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-5-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-5-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-5-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-5-600x600.jpg 600w"
-                                                                                data-image-id="1"></div>
-                                                                            <div class="wd-product-grid-slide"
-                                                                                data-image-url="/assets/wp-content/uploads/2024/06/EH-HL22A-4.jpg"
-                                                                                data-image-srcset="/assets/wp-content/uploads/2024/06/EH-HL22A-4.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-4-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-4-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-4-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-4-600x600.jpg 600w"
-                                                                                data-image-id="2"></div>
-                                                                            <div class="wd-product-grid-slide"
-                                                                                data-image-url="/assets/wp-content/uploads/2024/06/EH-HL22A-3.jpg"
-                                                                                data-image-srcset="/assets/wp-content/uploads/2024/06/EH-HL22A-3.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-3-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-3-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-3-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-3-600x600.jpg 600w"
-                                                                                data-image-id="3"></div>
+                                                                         
+                                                                        
+                                                                        @if (!empty($product->image))
+                                                                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="product-image">
+                                                                        @endif
+                                                                        
                                                                         </div>
-                                                                        <div class="wd-product-grid-slider-pagin">
-                                                                            <div data-image-id="0"
-                                                                                class="wd-product-grid-slider-dot"></div>
-                                                                            <div data-image-id="1"
-                                                                                class="wd-product-grid-slider-dot"></div>
-                                                                            <div data-image-id="2"
-                                                                                class="wd-product-grid-slider-dot"></div>
-                                                                            <div data-image-id="3"
-                                                                                class="wd-product-grid-slider-dot"></div>
+                                                                       
+                                                                        <div class="product-labels labels-rounded-sm">
+                                                                            <span class="onsale product-label">    {{ round((1 - $product->discounted_price / $product->original_price) * 100) }}%
+</span>
                                                                         </div>
-                                                                        <div class="product-labels labels-rounded-sm"><span
-                                                                                class="onsale product-label">-5%</span>
-                                                                        </div><img loading="lazy" width="900" height="900"
-                                                                            src="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg"
-                                                                            class="attachment-large size-large"
-                                                                            alt="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-                                                                            decoding="async"
-                                                                            srcset="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-600x600.jpg 600w"
-                                                                            sizes="(max-width: 900px) 100vw, 900px" />
+                                                                        <img loading="lazy" width="900" height="900" src="{{asset('storage/' . $product->image) }}" class="attachment-large size-large" alt="{{ $product->name }}" />
                                                                     </a>
-                                                                    <div class="wd-buttons wd-pos-r-t">
-                                                                        <div
-                                                                            class="wd-compare-btn product-compare-button wd-action-btn wd-style-icon wd-compare-icon">
-                                                                            <a href="/assets/compare/?product_id=26178"
-                                                                                data-id="26178" rel="nofollow"
-                                                                                data-added-text="So sánh sản phẩm">
-                                                                                <span>So sánh</span>
-                                                                            </a>
-                                                                        </div>
-                                                                        <div
-                                                                            class="quick-view wd-action-btn wd-style-icon wd-quick-view-icon">
-                                                                            <a href="/assets/san-pham/bep-hong-ngoai-chefs-eh-hl22a/"
-                                                                                class="open-quick-view quick-view-button"
-                                                                                rel="nofollow" data-id="26178">Quick
-                                                                                view</a>
-                                                                        </div>
-                                                                    </div>
                                                                 </div>
                                                                 <div class="product-element-bottom">
-                                                                    <h3 class="wd-entities-title"><a
-                                                                            href="/assets/san-pham/bep-hong-ngoai-chefs-eh-hl22a/">Bếp
-                                                                            hồng ngoại đơn Chef&#8217;s EH-HL22A</a></h3>
+                                                                    <h3 class="wd-entities-title"><a href="{{ $product->url }}">{{ $product->name }}</a></h3>
                                                                     <div class="wrap-price">
-                                                                        <span class="price"><del aria-hidden="true"><span
-                                                                                    class="woocommerce-Price-amount amount"><bdi>2.190.000&nbsp;<span
-                                                                                            class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del>
-                                                                            <span class="screen-reader-text">Giá gốc là:
-                                                                                2.190.000&nbsp;&#8363;.</span><ins
-                                                                                aria-hidden="true"><span
-                                                                                    class="woocommerce-Price-amount amount"><bdi>2.080.000&nbsp;<span
-                                                                                            class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins><span
-                                                                                class="screen-reader-text">Giá hiện tại là:
-                                                                                2.080.000&nbsp;&#8363;.</span></span>
-                                                                    </div>
-                                                                    <div class="wd-add-btn wd-add-btn-replace">
-                                                                        <a href="?add-to-cart=26178"
-                                                                            aria-describedby="woocommerce_loop_add_to_cart_link_describedby_26178"
-                                                                            data-quantity="1"
-                                                                            class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"
-                                                                            data-product_id="26178"
-                                                                            data-product_sku="EH-HL22A"
-                                                                            aria-label="Thêm vào giỏ hàng: &ldquo;Bếp hồng ngoại đơn Chef&#039;s EH-HL22A&rdquo;"
-                                                                            rel="nofollow"
-                                                                            data-success_message="&ldquo;Bếp hồng ngoại đơn Chef&#039;s EH-HL22A&rdquo; đã được thêm vào giỏ hàng của bạn"><span>Thêm
-                                                                                vào giỏ hàng</span></a> <span
-                                                                            id="woocommerce_loop_add_to_cart_link_describedby_26178"
-                                                                            class="screen-reader-text">
+                                                                        <span class="price">
+                                                                            <del><bdi>{{ number_format($product->original_price, 0, ',', '.') }}&#8363;</bdi></del>
+                                                                            <ins><bdi>{{ number_format($product->discounted_price, 0, ',', '.') }}&#8363;</bdi></ins>
                                                                         </span>
                                                                     </div>
-                                                                    <div class="fade-in-block wd-scroll">
-                                                                        <div class="hover-content-wrap">
-                                                                            <div class="hover-content wd-more-desc">
-                                                                                <div
-                                                                                    class="hover-content-inner wd-more-desc-inner">
-                                                                                    <table
-                                                                                        class="woocommerce-product-attributes shop_attributes"
-                                                                                        aria-label="Chi tiết sản phẩm">
-                                                                                        <tr
-                                                                                            class="woocommerce-product-attributes-item woocommerce-product-attributes-item--dimensions">
-                                                                                            <th class="woocommerce-product-attributes-item__label"
-                                                                                                scope="row">
-                                                                                                <span class="wd-attr-name">
-                                                                                                    <span
-                                                                                                        class="wd-attr-name-label">
-                                                                                                        Kích thước </span>
-                                                                                                </span>
-                                                                                            </th>
-                                                                                            <td
-                                                                                                class="woocommerce-product-attributes-item__value">
-                                                                                                31 &times; 38,5 &times; 5,3
-                                                                                                cm</td>
-                                                                                        </tr>
-                                                                                        <tr
-                                                                                            class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_brand">
-                                                                                            <th class="woocommerce-product-attributes-item__label"
-                                                                                                scope="row">
-                                                                                                <span class="wd-attr-name">
-                                                                                                    <span
-                                                                                                        class="wd-attr-name-label">
-                                                                                                        Brand </span>
-                                                                                                </span>
-                                                                                            </th>
-                                                                                            <td
-                                                                                                class="woocommerce-product-attributes-item__value">
-                                                                                                <span class="wd-attr-term">
-                                                                                                    <p>Chef&#039;s</p>
-                                                                                                </span>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </table>
-                                                                                </div>
-                                                                                <a href="#" rel="nofollow"
-                                                                                    class="wd-more-desc-btn"
-                                                                                    aria-label="Read more description"></a>
-                                                                            </div>
-                                                                        </div>
+                                                                    <div class="wd-add-btn wd-add-btn-replace">
+                                                                        <a href="{{ route('product.detail', ['slug' => $product->slug]) }}" class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop" data-product_id="{{ $product->id }}" rel="nofollow">
+                                                                            <span>Thêm vào giỏ hàng</span>
+                                                                        </a>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        @endforeach
+                                                        
                                                        
                                                     </div>
+                                                    @if ($products->hasPages())
                                                     <div class="wd-loop-footer products-footer">
-                                                        <nav class="woocommerce-pagination wd-pagination"
-                                                            aria-label="Phân trang sản phẩm">
-                                                            <ul class='page-numbers'>
-                                                                <li><span aria-label="Trang 1" aria-current="page"
-                                                                        class="page-numbers current">1</span></li>
-                                                                <li><a aria-label="Trang 2" class="page-numbers"
-                                                                        href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/page/2/">2</a>
-                                                                </li>
-                                                                <li><a class="next page-numbers"
-                                                                        href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/page/2/">&rarr;</a>
-                                                                </li>
+                                                        <nav class="woocommerce-pagination wd-pagination" aria-label="Phân trang sản phẩm">
+                                                            <ul class="page-numbers">
+                                                                {{-- Nút về trang trước --}}
+                                                                @if ($products->onFirstPage())
+                                                                    <li><span class="page-numbers current">&laquo;</span></li>
+                                                                @else
+                                                                    <li><a class="page-numbers" href="{{ $products->previousPageUrl() }}">&laquo;</a></li>
+                                                                @endif
+                                                
+                                                                {{-- Hiển thị số trang --}}
+                                                                @foreach ($products->links()->elements as $element)
+                                                                    @if (is_string($element))
+                                                                        <li><span class="page-numbers">{{ $element }}</span></li>
+                                                                    @endif
+                                                
+                                                                    @if (is_array($element))
+                                                                        @foreach ($element as $page => $url)
+                                                                            @if ($page == $products->currentPage())
+                                                                                <li><span class="page-numbers current">{{ $page }}</span></li>
+                                                                            @else
+                                                                                <li><a class="page-numbers" href="{{ $url }}">{{ $page }}</a></li>
+                                                                            @endif
+                                                                        @endforeach
+                                                                    @endif
+                                                                @endforeach
+                                                
+                                                                {{-- Nút tới trang sau --}}
+                                                                @if ($products->hasMorePages())
+                                                                    <li><a class="next page-numbers" href="{{ $products->nextPageUrl() }}">&rarr;</a></li>
+                                                                @else
+                                                                    <li><span class="page-numbers current">&rarr;</span></li>
+                                                                @endif
                                                             </ul>
                                                         </nav>
                                                     </div>
+                                                @endif
+                                                
                                                 </div>
                                             </div>
                                         </div>

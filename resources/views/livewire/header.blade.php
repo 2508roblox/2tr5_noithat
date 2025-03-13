@@ -5,78 +5,7 @@
         <div
             class="whb-row whb-top-bar whb-not-sticky-row whb-without-bg whb-border-fullwidth whb-color-dark whb-hidden-mobile whb-flex-flex-middle">
             <div class="container">
-                <div class="whb-flex-row whb-top-bar-inner">
-                    <div class="whb-column whb-col-left whb-visible-lg">
-                        <div class="wd-header-text reset-last-child "><span style="color: #1f5129;"><strong>Giảm
-                                    ngay 5% </strong>trên tổng đơn hàng khi nhập mã
-                                "<strong>Online</strong>"</span></div>
-                    </div>
-                    <div class="whb-column whb-col-center whb-visible-lg whb-empty-column"></div>
-                    <div class="whb-column whb-col-right whb-visible-lg">
-                        <div class="wd-header-nav wd-header-secondary-nav text-center" role="navigation"
-                            aria-label="Secondary navigation">
-                            <ul id="menu-top-bar"
-                                class="menu wd-nav wd-nav-secondary wd-style-default wd-gap-s">
-                                <li id="menu-item-10579"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10579 item-level-0 menu-simple-dropdown wd-event-hover">
-                                    <a target="_blank" href="https://phanhoanggia.com/"
-                                        class="woodmart-nav-link"><span class="nav-link-text">Phan Hoàng
-                                            Gia</span></a></li>
-                                <li id="menu-item-10580"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10580 item-level-0 menu-simple-dropdown wd-event-hover">
-                                    <a target="_blank" href="https://phanhoanggia.com/showroom-noi-that-online/"
-                                        class="woodmart-nav-link"><span class="nav-link-text">Showroom
-                                            Online</span></a></li>
-                                <li id="menu-item-21671"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-21671 item-level-0 menu-simple-dropdown wd-event-hover">
-                                    <a href="#" class="woodmart-nav-link"><span
-                                            class="nav-link-text">Blog</span></a>
-                                    <div
-                                        class="color-scheme-dark wd-design-default wd-dropdown-menu wd-dropdown">
-                                        <div class="container wd-entry-content">
-                                            <ul class="wd-sub-menu color-scheme-dark">
-                                                <li id="menu-item-21582"
-                                                    class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21582 item-level-1 wd-event-hover">
-                                                    <a href="/assets/category/review-san-pham/"
-                                                        class="woodmart-nav-link">Review sản phẩm mới nhất</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li id="menu-item-26632"
-                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-26632 item-level-0 menu-simple-dropdown wd-event-hover">
-                                    <a href="https://catalogue.phanhoanggia.com/"
-                                        class="woodmart-nav-link"><span
-                                            class="nav-link-text">Catalogue</span></a></li>
-                                <li id="menu-item-10648"
-                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10648 item-level-0 menu-simple-dropdown wd-event-hover">
-                                    <a href="/assets/showroom-noi-that/"
-                                        class="woodmart-nav-link"><span class="nav-link-text">Hệ
-                                            Thống</span></a></li>
-                            </ul>
-                        </div>
-                        <div id=""
-                            class=" wd-social-icons wd-style-default social-follow wd-shape-circle  whb-oongkmlkmeruzh2veu6g color-scheme-dark text-center">
-                            <a rel="noopener noreferrer nofollow" href="https://www.facebook.com/phgfurniture"
-                                target="_blank" class=" wd-social-icon social-facebook"
-                                aria-label="Facebook social link">
-                                <span class="wd-icon"></span>
-                            </a>
-                            <a rel="noopener noreferrer nofollow" href="https://www.youtube.com/@phanhoanggia"
-                                target="_blank" class=" wd-social-icon social-youtube"
-                                aria-label="YouTube social link">
-                                <span class="wd-icon"></span>
-                            </a>
-                            <a rel="noopener noreferrer nofollow"
-                                href="https://www.tiktok.com/@noithatphanhoanggia" target="_blank"
-                                class=" wd-social-icon social-tiktok" aria-label="TikTok social link">
-                                <span class="wd-icon"></span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="whb-column whb-col-mobile whb-hidden-lg whb-empty-column"></div>
-                </div>
+               
             </div>
         </div>
         <div
@@ -332,16 +261,14 @@
                                                                                                         class="elementor-widget-container">
                                                                                                         <ul
                                                                                                             class="wd-sub-menu wd-sub-accented  mega-menu-list">
-
                                                                                                             @foreach ($subCategory->childSubCategories as $childSubCategory)
-                                                                                                            
-                                                                                                            <li
-                                                                                                            class="item-with-label item-label-primary">
-                                                                                                            <a href="/assets/danh-muc-san-pham/may-hut-mui/"
-                                                                                                            target="_blank">
-                                                                                                            {{ $childSubCategory->name }}
-                                                                                                        </a>
+                                                                                                            <li class="item-with-label item-label-primary">
+                                                                                                                <a href="{{ route('category', ['slug' => $childSubCategory->slug]) }}" target="_blank">
+                                                                                                                    {{ $childSubCategory->name }}
+                                                                                                                </a>
+                                                                                                            </li>
                                                                                                         @endforeach
+                                                                                                        
                                                                                                                
                                                                                                             </li>
                                                                                                         </ul>
@@ -375,7 +302,7 @@
                                                                                                                                         <!-- You can add other images or sliders here if needed -->
                                                                                                                                     </div>
                                                                                                                                     <div class="product-element-top wd-quick-shop">
-                                                                                                                                        <a href="{{ url($product->slug) }}" class="product-image-link">
+                                                                                                                                        <a href="{{ route('product.detail', ['slug' => $product->slug]) }}" class="product-image-link">
                                                                                                                                          
                                                                                                                                         <img src=" {{ asset('storage/' . $product->image) }}" alt="">
                                                                                                                                             <div
@@ -391,7 +318,7 @@
                                                                                                                                     </div>
                                                                                                                                     <div class="product-element-bottom">
                                                                                                                                         <h3 class="wd-entities-title">
-                                                                                                                                            <a href="{{ url($product->slug) }}">{{ $product->name }}</a>
+                                                                                                                                            <a href="{{ route('product.detail', ['slug' => $product->slug]) }}">{{ $product->name }}</a>
                                                                                                                                         </h3>
                                                                                                                                         <div class="wrap-price">
                                                                                                                                             <span class="price">
@@ -404,7 +331,7 @@
                                                                                                                                             </span>
                                                                                                                                         </div>
                                                                                                                                         <div class="wd-add-btn wd-add-btn-replace">
-                                                                                                                                            <a href="?add-to-cart={{ $product->id }}" data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop" data-product_id="{{ $product->id }}" aria-label="Thêm vào giỏ hàng: &ldquo;{{ $product->name }}&rdquo;" rel="nofollow">
+                                                                                                                                            <a href="{{ route('product.detail', ['slug' => $product->slug]) }}"   data-quantity="1" class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"   aria-label="Thêm vào giỏ hàng: &ldquo;{{ $product->name }}&rdquo;" rel="nofollow">
                                                                                                                                                 <span>Thêm vào giỏ hàng</span>
                                                                                                                                             </a>
                                                                                                                                         </div>
@@ -524,14 +451,16 @@
     </ul>
     <ul id="menu-mobile-categories-mega-electronics"
         class="mobile-categories-menu menu wd-nav wd-nav-mobile wd-layout-dropdown wd-active">
+        @foreach ($categories as $category)
         <li id="menu-item-9668"
             class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-9668 item-level-0">
-            <a href="/assets/danh-muc-san-pham/bep-dien-tu/" class="woodmart-nav-link"><img
+            <a href="{{ route('category', ['slug' => $category->slug]) }}"  class="woodmart-nav-link"><img
                     alt="Bếp điện từ"
-                    src="/assets/wp-content/uploads/2023/04/icon-shop-phg-1.svg"
+                    src="{{asset('storage/' . $category->icon_image)}}"
                     title="Bếp điện từ" loading="lazy" class="wd-nav-img" width="18" height="18"><span
-                    class="nav-link-text">Bếp điện từ</span></a>
+                    class="nav-link-text">{{ $category->name }}</span></a>
         </li>
+        @endforeach
      
     </ul>
 </div>

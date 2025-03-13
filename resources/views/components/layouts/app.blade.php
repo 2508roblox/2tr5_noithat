@@ -30,7 +30,16 @@
         white-space: normal;
     }
 }
+body {
+    margin-left: 0 !important;
+}
 
+
+@media (min-width: 1025px) {
+    .wd-sticky-nav-enabled:not([class*="wrapper-boxed"]) .whb-header.whb-sticky-real.whb-sticked .whb-main-header {
+        margin-left: 0 !important;
+    }
+}
         </style>
     </body>
 </html>

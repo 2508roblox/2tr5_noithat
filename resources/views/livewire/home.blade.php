@@ -199,17 +199,17 @@
                                         <div class="wd-menu widget_nav_mega_menu">
                                             <ul id="menu-sticky-navigation-mega-electronics-1"
                                                 class="menu wd-nav wd-nav-vertical wd-design-default wd-gap-">
+                                                @foreach ($categories as $category)
                                                
                                          
                                                 <li class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-23193 item-level-0 menu-mega-dropdown wd-event-hover menu-item-has-children"
                                                 style="--wd-dropdown-width: 1000px;">
-                                                <a href="/assets/danh-muc-san-pham/ket-sat/"
+                                                <a href="{{ route('category', ['slug' => $category->slug]) }}"
                                                     class="woodmart-nav-link"><img loading="lazy" decoding="async"
                                                         alt="Icon két sắt"
                                                         src="/assets/wp-content/uploads/2023/10/icon-ket-sat-menu.svg"
                                                         title="Icon két sắt" loading="lazy" class="wd-nav-img"
-                                                        width="18" height="18"><span class="nav-link-text">Két
-                                                        sắt</span></a>
+                                                        width="18" height="18"><span class="nav-link-text">{{ $category->name }}</span></a>
                                                 <div
                                                     class="wd-dropdown-menu wd-dropdown wd-design-full-height color-scheme-dark wd-scroll">
                                                     <div class="wd-scroll-content">
@@ -223,7 +223,7 @@
                                                                         data-id="76a0a77"
                                                                         data-element_type="container">
                                                                         <div class="e-con-inner">
-                                                                            <div class="elementor-element elementor-element-ef4dab2 e-con-full e-flex e-con e-child"
+                                                                            <div style="width:100%;" class="elementor-element elementor-element-ef4dab2 e-con-full e-flex e-con e-child"
                                                                                 data-id="ef4dab2"
                                                                                 data-element_type="container">
                                                                                 <div class="elementor-element elementor-element-605ad4c elementor-widget elementor-widget-wd_extra_menu_list"
@@ -232,43 +232,37 @@
                                                                                     data-widget_type="wd_extra_menu_list.default">
                                                                                     <div
                                                                                         class="elementor-widget-container">
-                                                                                        <ul
+                                                                                        <ul style="
+                                                                                        display: flex;
+                                                                                        gap: 6rem;
+                                                                                        width: 100%;
+                                                                                    "
                                                                                             class="wd-sub-menu wd-sub-accented  mega-menu-list">
-                                                                                            <li
+                                                                                            @foreach ($category->subCategories as $index => $subCategory)
+
+                                                                                           
+                                                                                            <li style="
+                                                                                            width: 100%;
+                                                                                        "
                                                                                                 class="item-with-label item-label-primary">
                                                                                                 <a
-                                                                                                    href="/assets/danh-muc-san-pham/ket-sat/">
-                                                                                                    Két sắt
+                                                                                                    href="{{ route('category', ['slug' => $subCategory->slug]) }}">
+                                                                                                    {{ $subCategory->name }}
                                                                                                 </a>
                                                                                                 <ul
                                                                                                     class="sub-sub-menu">
+                                                                                                    @foreach ($subCategory->childSubCategories as $childSubCategory)
                                                                                                     <li
                                                                                                         class="item-with-label item-label-primary">
                                                                                                         <a
-                                                                                                        href="{{ route('category', ['slug' => 'ket-sat']) }}?filter_brand=viet-tiep">
-                                                                                                            Két sắt
-                                                                                                            Việt
-                                                                                                            Tiệp
+                                                                                                        href="{{ route('category', ['slug' => $childSubCategory->slug]) }}">
+                                                                                                        {{ $childSubCategory->name }}
                                                                                                         </a>
                                                                                                     </li>
-                                                                                                    <li
-                                                                                                        class="item-with-label item-label-primary">
-                                                                                                        <a
-                                                                                                            href="/assets/danh-muc-san-pham/ket-sat/?filter_brand=samurai">
-                                                                                                            Két sắt
-                                                                                                            Samurai
-                                                                                                        </a>
-                                                                                                    </li>
-                                                                                                    <li
-                                                                                                        class="item-with-label item-label-primary">
-                                                                                                        <a
-                                                                                                            href="/assets/danh-muc-san-pham/ket-sat/?filter_brand=aifeibao">
-                                                                                                            Két sắt
-                                                                                                            Aifeibao
-                                                                                                        </a>
-                                                                                                    </li>
+                                                                                                   @endforeach
                                                                                                 </ul>
                                                                                             </li>
+                                                                                            @endforeach
                                                                                         </ul>
                                                                                     </div>
                                                                                 </div>
@@ -310,8 +304,7 @@
                                                                                                         <span
                                                                                                             class="tabs-text"
                                                                                                             data-elementor-setting-key="title">
-                                                                                                            Deal
-                                                                                                            khủng
+                                                                                                            Sản phẩm mới
                                                                                                         </span>
                                                                                                     </div>
                                                                                                    
@@ -337,7 +330,7 @@
                                                                                                             data-columns="4"
                                                                                                             data-grid-gallery="{&quot;grid_gallery&quot;:&quot;1&quot;,&quot;grid_gallery_control&quot;:&quot;hover&quot;,&quot;grid_gallery_enable_arrows&quot;:&quot;none&quot;}"
                                                                                                             style="--wd-col-lg:4;--wd-col-md:4;--wd-col-sm:2;--wd-gap-lg:20px;--wd-gap-sm:10px;">
-                                                                                                        
+                                                                                                            @foreach ($category->products as $product)
                                                                                                         {{-- sản phẩm --}}
                                                                                                             <div class="wd-product wd-with-labels wd-hover-fw-button wd-hover-with-fade wd-col product-grid-item product type-product post-23264 status-publish instock product_cat-ket-sat product_tag-ket-sat-dien-tu-samurai-me03 has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
                                                                                                                 data-loop="1"
@@ -349,151 +342,91 @@
                                                                                                                     </div>
                                                                                                                     <div
                                                                                                                         class="product-element-top wd-quick-shop">
-                                                                                                                        <a href="/assets/san-pham/ket-sat-dien-tu-samurai-me03/"
+                                                                                                                        <a href="{{ route('product.detail', ['slug' => $product->slug]) }}"
                                                                                                                             class="product-image-link">
                                                                                                                             <div
                                                                                                                                 class="wd-product-grid-slider wd-fill">
                                                                                                                                 <div class="wd-product-grid-slide"
-                                                                                                                                    data-image-url="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1.jpg"
-                                                                                                                                    data-image-srcset="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1-600x600.jpg 600w"
+                                                                                                                                    data-image-url="{{ asset('storage/' . $product->image) }}"
+                                                                                                                                    data-image-srcset="{{ asset('storage/' . $product->image) }}"
                                                                                                                                     data-image-id="0">
                                                                                                                                 </div>
-                                                                                                                                <div class="wd-product-grid-slide"
-                                                                                                                                    data-image-url="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-6.jpg"
-                                                                                                                                    data-image-srcset="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-6.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-6-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-6-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-6-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-6-600x600.jpg 600w"
-                                                                                                                                    data-image-id="1">
-                                                                                                                                </div>
-                                                                                                                                <div class="wd-product-grid-slide"
-                                                                                                                                    data-image-url="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-5.jpg"
-                                                                                                                                    data-image-srcset="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-5.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-5-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-5-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-5-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-5-600x600.jpg 600w"
-                                                                                                                                    data-image-id="2">
-                                                                                                                                </div>
-                                                                                                                                <div class="wd-product-grid-slide"
-                                                                                                                                    data-image-url="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-4.jpg"
-                                                                                                                                    data-image-srcset="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-4.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-4-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-4-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-4-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-4-600x600.jpg 600w"
-                                                                                                                                    data-image-id="3">
-                                                                                                                                </div>
-                                                                                                                                <div class="wd-product-grid-slide"
-                                                                                                                                    data-image-url="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-3.jpg"
-                                                                                                                                    data-image-srcset="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-3.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-3-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-3-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-3-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-3-600x600.jpg 600w"
-                                                                                                                                    data-image-id="4">
-                                                                                                                                </div>
-                                                                                                                                <div class="wd-product-grid-slide"
-                                                                                                                                    data-image-url="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-2.jpg"
-                                                                                                                                    data-image-srcset="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-2.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-2-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-2-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-2-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-2-600x600.jpg 600w"
-                                                                                                                                    data-image-id="5">
-                                                                                                                                </div>
+                                                                                                                             
                                                                                                                             </div>
                                                                                                                             <div
                                                                                                                                 class="wd-product-grid-slider-pagin">
                                                                                                                                 <div data-image-id="0"
                                                                                                                                     class="wd-product-grid-slider-dot">
                                                                                                                                 </div>
-                                                                                                                                <div data-image-id="1"
-                                                                                                                                    class="wd-product-grid-slider-dot">
-                                                                                                                                </div>
-                                                                                                                                <div data-image-id="2"
-                                                                                                                                    class="wd-product-grid-slider-dot">
-                                                                                                                                </div>
-                                                                                                                                <div data-image-id="3"
-                                                                                                                                    class="wd-product-grid-slider-dot">
-                                                                                                                                </div>
-                                                                                                                                <div data-image-id="4"
-                                                                                                                                    class="wd-product-grid-slider-dot">
-                                                                                                                                </div>
-                                                                                                                                <div data-image-id="5"
-                                                                                                                                    class="wd-product-grid-slider-dot">
-                                                                                                                                </div>
+                                                                                                                               
                                                                                                                             </div>
                                                                                                                             <div
                                                                                                                                 class="product-labels labels-rounded-sm">
+                                                                                                                              
+                                                                                                                                @if ($product->discounted_price  && $product->discounted_price  < $product->original_price)
+                                                                                                                                @php
+                                                                                                                                    $discountPercentage = round((($product->original_price - $product->discounted_price ) / $product->original_price) * 100);
+                                                                                                                                @endphp
+                                                                                                                                <span class="onsale product-label">-{{ $discountPercentage }}%</span>
+                                                                                                                            @endif
+                                                                                                                            
                                                                                                                                 <span
-                                                                                                                                    class="onsale product-label">-17%</span><span
                                                                                                                                     class="new product-label">Mới</span>
                                                                                                                             </div>
                                                                                                                             <img loading="lazy"
                                                                                                                                 decoding="async"
                                                                                                                                 width="900"
                                                                                                                                 height="900"
-                                                                                                                                src="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1.jpg"
+                                                                                                                                src="{{ asset('storage/' . $product->image) }}"
                                                                                                                                 class="attachment-large size-large"
                                                                                                                                 alt="Két sắt điện tử Samurai ME03"
-                                                                                                                                srcset="/assets/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2023/10/ket-sat-dien-tu-Samurai-ME03-1-600x600.jpg 600w"
                                                                                                                                 sizes="(max-width: 900px) 100vw, 900px"
                                                                                                                                 title="Trang chủ 79">
                                                                                                                         </a>
-                                                                                                                        <div
-                                                                                                                            class="wd-buttons wd-pos-r-t">
-                                                                                                                            <div
-                                                                                                                                class="wd-compare-btn product-compare-button wd-action-btn wd-style-icon wd-compare-icon">
-                                                                                                                                <a href="/assets/compare/?product_id=23264"
-                                                                                                                                    data-id="23264"
-                                                                                                                                    rel="nofollow"
-                                                                                                                                    data-added-text="So sánh sản phẩm">
-                                                                                                                                    <span>So
-                                                                                                                                        sánh</span>
-                                                                                                                                </a>
-                                                                                                                            </div>
-                                                                                                                            <div
-                                                                                                                                class="quick-view wd-action-btn wd-style-icon wd-quick-view-icon">
-                                                                                                                                <a href="/assets/san-pham/ket-sat-dien-tu-samurai-me03/"
-                                                                                                                                    class="open-quick-view quick-view-button"
-                                                                                                                                    rel="nofollow"
-                                                                                                                                    data-id="23264">Quick
-                                                                                                                                    view</a>
-                                                                                                                            </div>
-                                                                                                                        </div>
+                                                                                                                        
                                                                                                                     </div>
                                                                                                                     <div
                                                                                                                         class="product-element-bottom">
                                                                                                                         <h3
                                                                                                                             class="wd-entities-title">
                                                                                                                             <a
-                                                                                                                                href="/assets/san-pham/ket-sat-dien-tu-samurai-me03/">Két
-                                                                                                                                sắt
-                                                                                                                                điện
-                                                                                                                                tử
-                                                                                                                                Samurai
-                                                                                                                                ME03
-                                                                                                                                &#8211;
-                                                                                                                                Thép
-                                                                                                                                tấm
-                                                                                                                                siêu
-                                                                                                                                cường</a>
+                                                                                                                            href="{{ route('product.detail', ['slug' => $product->slug]) }}">{{ $product->name }}</a>
                                                                                                                         </h3>
                                                                                                                         <div
                                                                                                                             class="wrap-price">
-                                                                                                                            <span
-                                                                                                                                class="price"><del
-                                                                                                                                    aria-hidden="true"><span
-                                                                                                                                        class="woocommerce-Price-amount amount"><bdi>7.600.000&nbsp;<span
-                                                                                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                                                                                            <span class="price">
+                                                                                                                                @if ($product->discounted_price && $product->discounted_price < $product->original_price)
+                                                                                                                                    <del aria-hidden="true">
+                                                                                                                                        <span class="woocommerce-Price-amount amount">
+                                                                                                                                            <bdi>{{ number_format($product->original_price, 0, ',', '.') }}&nbsp;
+                                                                                                                                                <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                                                                            </bdi>
+                                                                                                                                        </span>
+                                                                                                                                    </del>
+                                                                                                                                    <span class="screen-reader-text">Giá gốc là: {{ number_format($product->original_price, 0, ',', '.') }}&nbsp;&#8363;.</span>
+                                                                                                                                    <ins aria-hidden="true">
+                                                                                                                                        <span class="woocommerce-Price-amount amount">
+                                                                                                                                            <bdi>{{ number_format($product->discounted_price, 0, ',', '.') }}&nbsp;
+                                                                                                                                                <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                                                                            </bdi>
+                                                                                                                                        </span>
+                                                                                                                                    </ins>
+                                                                                                                                    <span class="screen-reader-text">Giá hiện tại là: {{ number_format($product->discounted_price, 0, ',', '.') }}&nbsp;&#8363;.</span>
+                                                                                                                                @else
+                                                                                                                                    <span class="woocommerce-Price-amount amount">
+                                                                                                                                        <bdi>{{ number_format($product->original_price, 0, ',', '.') }}&nbsp;
+                                                                                                                                            <span class="woocommerce-Price-currencySymbol">&#8363;</span>
+                                                                                                                                        </bdi>
                                                                                                                                     </span>
-                                                                                                                                </del>
-                                                                                                                                <span
-                                                                                                                                    class="screen-reader-text">Giá
-                                                                                                                                    gốc
-                                                                                                                                    là:
-                                                                                                                                    7.600.000&nbsp;&#8363;.</span><ins
-                                                                                                                                    aria-hidden="true"><span
-                                                                                                                                        class="woocommerce-Price-amount amount"><bdi>6.300.000&nbsp;<span
-                                                                                                                                                class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins>
-                                                                                                                                <span
-                                                                                                                                    class="screen-reader-text">Giá
-                                                                                                                                    hiện
-                                                                                                                                    tại
-                                                                                                                                    là:
-                                                                                                                                    6.300.000&nbsp;&#8363;.</span>
+                                                                                                                                @endif
                                                                                                                             </span>
+                                                                                                                            
                                                                                                                         </div>
                                                                                                                         <div
                                                                                                                             class="wd-add-btn wd-add-btn-replace">
-                                                                                                                            <a href="?add-to-cart=23264"
-                                                                                                                                aria-describedby="woocommerce_loop_add_to_cart_link_describedby_23264"
+                                                                                                                            <a href="{{ route('product.detail', ['slug' => $product->slug]) }}"
                                                                                                                                 data-quantity="1"
                                                                                                                                 class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"
-                                                                                                                                data-product_id="23264"
-                                                                                                                                data-product_sku="ME03"
                                                                                                                                 aria-label="Thêm vào giỏ hàng: &ldquo;Két sắt điện tử Samurai ME03 - Thép tấm siêu cường&rdquo;"
                                                                                                                                 rel="nofollow"
                                                                                                                                 data-success_message="&ldquo;Két sắt điện tử Samurai ME03 - Thép tấm siêu cường&rdquo; đã được thêm vào giỏ hàng của bạn"><span>Thêm
@@ -524,7 +457,7 @@
                                                                                                                     </div>
                                                                                                                 </div>
                                                                                                             </div>
-                                                                                                           
+                                                                                                           @endforeach
                                                                                                         </div>
                                                                                                       
                                                                                                     </div>
@@ -542,6 +475,9 @@
                                                     </div>
                                                 </div>
                                             </li>
+
+                                            @endforeach
+
                                             </ul>
                                         </div>
                                     </div>
@@ -557,35 +493,15 @@
                                         <div class="elementor-image-carousel-wrapper swiper" role="region"
                                             aria-roledescription="carousel" aria-label="Băng chuyền hình ảnh" dir="ltr">
                                             <div class="elementor-image-carousel swiper-wrapper" aria-live="off">
-                                                <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                                    aria-label="1 trên 4">
-                                                    <figure class="swiper-slide-inner"><img decoding="async"
-                                                            class="swiper-slide-image"
-                                                            src="/assets/wp-content/uploads/2024/05/mua-bep-tai-binh-duong-4.jpg"
-                                                            alt="Mua bếp tại Bình Dương" title="Trang chủ 204"></figure>
-                                                </div>
-                                                <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                                    aria-label="2 trên 4">
-                                                    <figure class="swiper-slide-inner"><img decoding="async"
-                                                            class="swiper-slide-image"
-                                                            src="/assets/wp-content/uploads/2024/05/mua-bep-tai-binh-duong-3.jpg"
-                                                            alt="Mua bếp tại Bình Dương" title="Trang chủ 205"></figure>
-                                                </div>
-                                                <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                                    aria-label="3 trên 4">
-                                                    <figure class="swiper-slide-inner"><img decoding="async"
-                                                            class="swiper-slide-image"
-                                                            src="/assets/wp-content/uploads/2024/05/mua-bep-tai-binh-duong-2.jpg"
-                                                            alt="Mua bếp tại Bình Dương" title="Trang chủ 206"></figure>
-                                                </div>
-                                                <div class="swiper-slide" role="group" aria-roledescription="slide"
-                                                    aria-label="4 trên 4">
-                                                    <figure class="swiper-slide-inner"><img decoding="async"
-                                                            class="swiper-slide-image"
-                                                            src="/assets/wp-content/uploads/2024/05/mua-bep-tai-binh-duong-1.jpg"
-                                                            alt="Mua bếp tại Bình Dương" title="Trang chủ 207"></figure>
-                                                </div>
+                                                @foreach ($banners as $index => $banner)
+                                                    <div class="swiper-slide" role="group" aria-roledescription="slide" aria-label="{{ $index + 1 }} trên {{ count($banners) }}">
+                                                        <figure class="swiper-slide-inner">
+                                                            <img decoding="async" class="swiper-slide-image" src="{{ asset('storage/' . $banner->image) }}" alt="Banner {{ $index + 1 }}">
+                                                        </figure>
+                                                    </div>
+                                                @endforeach
                                             </div>
+                                            
                                             <div class="elementor-swiper-button elementor-swiper-button-prev"
                                                 role="button" tabindex="0">
                                                 <svg aria-hidden="true" class="e-font-icon-svg e-eicon-chevron-left"
@@ -614,59 +530,19 @@
                                 <div class="wd-negative-gap elementor-element elementor-element-f269962 e-grid e-con-boxed e-con e-child"
                                     data-id="f269962" data-element_type="container">
                                     <div class="e-con-inner">
-                                        <div class="elementor-element elementor-element-4273b45 elementor-widget elementor-widget-wd_image_or_svg"
-                                            data-id="4273b45" data-element_type="widget"
-                                            data-widget_type="wd_image_or_svg.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="wd-image text-left">
-                                                    <img loading="lazy" decoding="async" width="700" height="300"
-                                                        src="/assets/wp-content/uploads/2023/12/banner-bep-may-hut-mui.jpg"
-                                                        class="attachment-full size-full" alt="Bếp và máy hút mùi"
-                                                        srcset="/assets/wp-content/uploads/2023/12/banner-bep-may-hut-mui.jpg 700w, https://shop.phanhoanggia.com/wp-content/uploads/2023/12/banner-bep-may-hut-mui-300x129.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/12/banner-bep-may-hut-mui-150x64.jpg 150w"
-                                                        sizes="(max-width: 700px) 100vw, 700px" title="Trang chủ 208">
+                                        @foreach ($banners as $banner)
+                                            <div class="elementor-element elementor-widget elementor-widget-wd_image_or_svg">
+                                                <div class="elementor-widget-container">
+                                                    <div class="wd-image text-left">
+                                                        <img  style="max-height: 100px; object-fit: cover;" loading="lazy" decoding="async" width="700" height="300"
+                                                             src="{{ asset('storage/' . $banner->image) }}"
+                                                             class="attachment-full size-full" alt="Banner">
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-5c18554 elementor-widget elementor-widget-wd_image_or_svg"
-                                            data-id="5c18554" data-element_type="widget"
-                                            data-widget_type="wd_image_or_svg.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="wd-image text-left">
-                                                    <img loading="lazy" decoding="async" width="700" height="300"
-                                                        src="/assets/wp-content/uploads/2023/12/banner-chau-voi.jpg"
-                                                        class="attachment-full size-full" alt="Chậu vòi rửa chén"
-                                                        srcset="/assets/wp-content/uploads/2023/12/banner-chau-voi.jpg 700w, https://shop.phanhoanggia.com/wp-content/uploads/2023/12/banner-chau-voi-300x129.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/12/banner-chau-voi-150x64.jpg 150w"
-                                                        sizes="(max-width: 700px) 100vw, 700px" title="Trang chủ 209">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-00ebe70 elementor-widget elementor-widget-wd_image_or_svg"
-                                            data-id="00ebe70" data-element_type="widget"
-                                            data-widget_type="wd_image_or_svg.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="wd-image text-left">
-                                                    <img loading="lazy" decoding="async" width="700" height="300"
-                                                        src="/assets/wp-content/uploads/2023/12/banner-thiet-bi-ve-sinh.jpg"
-                                                        class="attachment-full size-full" alt="Combo thiết bị vệ sinh"
-                                                        srcset="/assets/wp-content/uploads/2023/12/banner-thiet-bi-ve-sinh.jpg 700w, https://shop.phanhoanggia.com/wp-content/uploads/2023/12/banner-thiet-bi-ve-sinh-300x129.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/12/banner-thiet-bi-ve-sinh-150x64.jpg 150w"
-                                                        sizes="(max-width: 700px) 100vw, 700px" title="Trang chủ 210">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="elementor-element elementor-element-878ee7b elementor-widget elementor-widget-wd_image_or_svg"
-                                            data-id="878ee7b" data-element_type="widget"
-                                            data-widget_type="wd_image_or_svg.default">
-                                            <div class="elementor-widget-container">
-                                                <div class="wd-image text-left">
-                                                    <img loading="lazy" decoding="async" width="800" height="374"
-                                                        src="/assets/wp-content/uploads/2024/05/banner-khuyen-mai-6.jpg"
-                                                        class="attachment-full size-full" alt="Banner khuyến mãi"
-                                                        srcset="/assets/wp-content/uploads/2024/05/banner-khuyen-mai-6.jpg 800w, https://shop.phanhoanggia.com/wp-content/uploads/2024/05/banner-khuyen-mai-6-300x140.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/05/banner-khuyen-mai-6-768x359.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/05/banner-khuyen-mai-6-150x70.jpg 150w"
-                                                        sizes="(max-width: 800px) 100vw, 800px" title="Trang chủ 211">
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -698,34 +574,32 @@
                                                 <div class="wd-carousel wd-grid" data-scroll_per_page="yes"
                                                     style="--wd-col-lg:8;--wd-col-md:4;--wd-col-sm:2;--wd-gap-lg:20px;--wd-gap-sm:10px;">
                                                     <div class="wd-carousel-wrap">
+                                                        @foreach ($categories as $category)
                                                         <div class="wd-carousel-item">
                                                             <div class="category-grid-item wd-cat cat-design-alt categories-with-shadow without-product-count wd-with-subcat product-category product first"
                                                                 data-loop="1">
                                                                 <div class="wrapp-category">
                                                                     <div class="category-image-wrapp">
-                                                                        <a href="/assets/danh-muc-san-pham/bep-dien-tu/"
-                                                                            class="category-image"
-                                                                            aria-label="Category image">
+                                                                        <a href="{{ route('category', ['slug' => $category->slug]) }}" class="category-image" aria-label="Category image">
                                                                             <img loading="lazy" decoding="async"
                                                                                 width="200" height="200"
-                                                                                src="/assets/wp-content/uploads/2023/04/icon-danh-muc-san-pham-40-200x200.jpg"
+                                                                                src="{{ asset('storage/' . $category->image) }}"
                                                                                 class="attachment-200x200 size-200x200"
-                                                                                alt="Bếp điện từ"
-                                                                                srcset="/assets/wp-content/uploads/2023/04/icon-danh-muc-san-pham-40-200x200.jpg 200w, https://shop.phanhoanggia.com/wp-content/uploads/2023/04/icon-danh-muc-san-pham-40-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2023/04/icon-danh-muc-san-pham-40-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2023/04/icon-danh-muc-san-pham-40.jpg 400w"
-                                                                                sizes="(max-width: 200px) 100vw, 200px"
-                                                                                title="Trang chủ 212"> </a>
+                                                                                alt="{{ $category->name }}"
+                                                                                sizes="(max-width: 200px) 100vw, 200px">
+                                                                        </a>
                                                                     </div>
                                                                     <div class="hover-mask">
                                                                         <h3 class="wd-entities-title">
-                                                                            Bếp điện từ <mark class="count">(64)</mark>
+                                                                            {{ $category->name }} <mark class="count"> </mark>
                                                                         </h3>
                                                                     </div>
-                                                                    <a href="/assets/danh-muc-san-pham/bep-dien-tu/"
-                                                                        class="category-link wd-fill"
-                                                                        aria-label="Product category bep-dien-tu"></a>
+                                                                    <a href="{{ route('category', ['slug' => $category->slug]) }}" class="category-link wd-fill" aria-label="Product category {{ $category->slug }}"></a>
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    @endforeach
+                                                    
                                                        
                                                     </div>
                                                 </div>
@@ -744,6 +618,10 @@
                             </div>
                         </div>
                     </div>
+                    @foreach ($categories as $category)
+                    @if ($category->products->isNotEmpty()) <!-- Check if the category has products -->
+
+
                     <div class="elementor-element elementor-element-5f8c40d e-con-full wd-section-stretch-content e-flex e-con e-parent"
                         data-id="5f8c40d" data-element_type="container">
                         <div class="wd-negative-gap elementor-element elementor-element-e8ce73b e-flex e-con-boxed e-con e-child"
@@ -757,12 +635,7 @@
                                     <div class="elementor-widget-container">
                                         <div class="elementor-icon-wrapper">
                                             <div class="elementor-icon">
-                                                <svg aria-hidden="true" class="e-font-icon-svg e-fas-bolt"
-                                                    viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M296 160H180.6l42.6-129.8C227.2 15 215.7 0 200 0H56C44 0 33.8 8.9 32.2 20.8l-32 240C-1.7 275.2 9.5 288 24 288h118.7L96.6 482.5c-3.6 15.2 8 29.5 23.3 29.5 8.4 0 16.4-4.4 20.8-12l176-304c9.3-15.9-2.2-36-20.7-36z">
-                                                    </path>
-                                                </svg>
+                                               
                                             </div>
                                         </div>
                                     </div>
@@ -775,7 +648,7 @@
                                             <div class="wd-tabs-header text-center">
                                                 <div class="tabs-name title">
                                                     <span class="tabs-text" data-elementor-setting-key="title">
-                                                        ƯU ĐÃI "CỰC SỐC" </span>
+                                                      {{$category->name}} </span>
                                                 </div>
                                                 <div class="wd-nav-wrapper wd-nav-tabs-wrapper tabs-navigation-wrapper">
                                                     <ul
@@ -801,278 +674,71 @@
                                                             data-scroll_per_page="yes"
                                                             style="--wd-col-lg:6;--wd-col-md:5;--wd-col-sm:2;--wd-gap-lg:20px;--wd-gap-sm:10px;">
                                                             <div class="wd-carousel-wrap">
+                                                                {{-- sản phẩm item --}}
+                                                                @foreach ($category->products as $product)
                                                                 <div class="wd-carousel-item">
-                                                                    <div class="wd-product wd-with-labels wd-hover-fw-button wd-hover-with-fade wd-fade-off product-grid-item product type-product post-27681 status-publish instock product_cat-may-rua-chen-bat product_cat-may-rua-chen-bat-am-tu-toan-phan has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
-                                                                        data-loop="1" data-id="27681">
+                                                                    <div class="wd-product wd-with-labels wd-hover-fw-button wd-hover-with-fade wd-fade-off product-grid-item product type-product post-{{ $product->id }} status-publish instock has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
+                                                                        data-loop="1" data-id="{{ $product->id }}">
                                                                         <div class="product-wrapper">
                                                                             <div class="content-product-imagin"></div>
-                                                                            <div
-                                                                                class="product-element-top wd-quick-shop">
-                                                                                <a href="/assets/san-pham/may-rua-chen-bat-hafele-hdw-fi60d/"
-                                                                                    class="product-image-link">
-                                                                                    <div
-                                                                                        class="wd-product-grid-slider wd-fill">
+                                                                            <div class="product-element-top wd-quick-shop">
+                                                                                <a href="{{ url('/san-pham/' . $product->slug) }}" class="product-image-link">
+                                                                                    <div class="wd-product-grid-slider wd-fill">
                                                                                         <div class="wd-product-grid-slide"
-                                                                                            data-image-url="/assets/wp-content/uploads/2024/07/HDW-FI60D.jpg"
-                                                                                            data-image-srcset="/assets/wp-content/uploads/2024/07/HDW-FI60D.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-600x600.jpg 600w"
-                                                                                            data-image-id="0"></div>
-                                                                                      
-                                                                                    </div>
-                                                                                   
-                                                                                    <div
-                                                                                        class="product-labels labels-rounded-sm">
-                                                                                        <span
-                                                                                            class="onsale product-label">-21%</span>
-                                                                                    </div><img loading="lazy"
-                                                                                        decoding="async" width="900"
-                                                                                        height="900"
-                                                                                        src="/assets/wp-content/uploads/2024/07/HDW-FI60D.jpg"
-                                                                                        class="attachment-full size-full"
-                                                                                        alt="Máy rửa chén bát Hafele HDW-FI60D"
-                                                                                        srcset="/assets/wp-content/uploads/2024/07/HDW-FI60D.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-600x600.jpg 600w"
-                                                                                        sizes="(max-width: 900px) 100vw, 900px"
-                                                                                        title="Trang chủ 231">
-                                                                                </a>
-                                                                                
-                                                                            </div>
-                                                                            <div class="product-element-bottom">
-                                                                                <h3 class="wd-entities-title"><a
-                                                                                        href="/assets/san-pham/may-rua-chen-bat-hafele-hdw-fi60d/">Máy
-                                                                                        rửa chén bát Hafele
-                                                                                        HDW-FI60D</a></h3>
-                                                                                <div class="wrap-price">
-                                                                                    <span class="price"><del
-                                                                                            aria-hidden="true"><span
-                                                                                                class="woocommerce-Price-amount amount"><bdi>25.179.000&nbsp;<span
-                                                                                                        class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
-                                                                                            </span>
-                                                                                        </del> <span
-                                                                                            class="screen-reader-text">Giá
-                                                                                            gốc là:
-                                                                                            25.179.000&nbsp;&#8363;.</span><ins
-                                                                                            aria-hidden="true"><span
-                                                                                                class="woocommerce-Price-amount amount"><bdi>19.828.000&nbsp;<span
-                                                                                                        class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins>
-                                                                                        <span
-                                                                                            class="screen-reader-text">Giá
-                                                                                            hiện tại là:
-                                                                                            19.828.000&nbsp;&#8363;.</span>
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="wd-add-btn wd-add-btn-replace">
-                                                                                    <a href="?add-to-cart=27681"
-                                                                                        aria-describedby="woocommerce_loop_add_to_cart_link_describedby_27681"
-                                                                                        data-quantity="1"
-                                                                                        class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"
-                                                                                        data-product_id="27681"
-                                                                                        data-product_sku="HDW-FI60D"
-                                                                                        aria-label="Thêm vào giỏ hàng: &ldquo;Máy rửa chén bát Hafele HDW-FI60D&rdquo;"
-                                                                                        rel="nofollow"
-                                                                                        data-success_message="&ldquo;Máy rửa chén bát Hafele HDW-FI60D&rdquo; đã được thêm vào giỏ hàng của bạn"><span>Thêm
-                                                                                            vào giỏ hàng</span></a>
-                                                                                    <span
-                                                                                        id="woocommerce_loop_add_to_cart_link_describedby_27681"
-                                                                                        class="screen-reader-text">
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div class="fade-in-block wd-scroll">
-                                                                                    <div class="hover-content-wrap">
-                                                                                        <div
-                                                                                            class="hover-content wd-more-desc">
-                                                                                            <div
-                                                                                                class="hover-content-inner wd-more-desc-inner">
-                                                                                                <table
-                                                                                                    class="woocommerce-product-attributes shop_attributes"
-                                                                                                    aria-label="Chi tiết sản phẩm">
-                                                                                                    <tr
-                                                                                                        class="woocommerce-product-attributes-item woocommerce-product-attributes-item--dimensions">
-                                                                                                        <th class="woocommerce-product-attributes-item__label"
-                                                                                                            scope="row">
-                                                                                                            <span
-                                                                                                                class="wd-attr-name">
-                                                                                                                <span
-                                                                                                                    class="wd-attr-name-label">
-                                                                                                                    Kích
-                                                                                                                    thước
-                                                                                                                </span>
-                                                                                                            </span>
-                                                                                                        </th>
-                                                                                                        <td
-                                                                                                            class="woocommerce-product-attributes-item__value">
-                                                                                                            59,8 &times;
-                                                                                                            57 &times;
-                                                                                                            82 cm</td>
-                                                                                                    </tr>
-                                                                                                    <tr
-                                                                                                        class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_brand">
-                                                                                                        <th class="woocommerce-product-attributes-item__label"
-                                                                                                            scope="row">
-                                                                                                            <span
-                                                                                                                class="wd-attr-name">
-                                                                                                                <span
-                                                                                                                    class="wd-attr-name-label">
-                                                                                                                    Brand
-                                                                                                                </span>
-                                                                                                            </span>
-                                                                                                        </th>
-                                                                                                        <td
-                                                                                                            class="woocommerce-product-attributes-item__value">
-                                                                                                            <span
-                                                                                                                class="wd-attr-term">
-                                                                                                                <p>Hafele
-                                                                                                                </p>
-                                                                                                            </span>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                </table>
-                                                                                            </div>
-                                                                                            <a href="#" rel="nofollow"
-                                                                                                class="wd-more-desc-btn"
-                                                                                                aria-label="Read more description"></a>
+                                                                                            data-image-url="{{ asset('storage/' .$product->image) }}"
+                                                                                            data-image-srcset="{{ asset('storage/' .$product->image) }} 900w, {{ asset('storage/' .$product->image) }} 300w, {{ asset('storage/' .$product->image) }} 150w, {{ asset('storage/' .$product->image) }} 768w, {{ asset('storage/' .$product->image) }} 600w"
+                                                                                            data-image-id="{{ $product->id }}">
                                                                                         </div>
                                                                                     </div>
+                                                                                    <div class="product-labels labels-rounded-sm">
+                                                                                        @if($product->discount > 0)
+                                                                                            <span class="onsale product-label">-{{ $product->discount }}%</span>
+                                                                                        @endif
+                                                                                    </div>
+                                                                                    <img loading="lazy" decoding="async" width="900" height="900"
+                                                                                        src="{{ asset('storage/' .$product->image) }}"
+                                                                                        class="attachment-full size-full"
+                                                                                        alt="{{ $product->name }}"
+                                                                                        sizes="(max-width: 900px) 100vw, 900px">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="product-element-bottom">
+                                                                                <h3 class="wd-entities-title">
+                                                                                    <a href="{{ url('/san-pham/' . $product->slug) }}">{{ $product->name }}</a>
+                                                                                </h3>
+                                                                                <div class="wrap-price">
+                                                                                    <span class="price">
+                                                                                        @if($product->original_price > $product->discounted_price)
+                                                                                            <del aria-hidden="true">
+                                                                                                <span class="woocommerce-Price-amount amount">
+                                                                                                    <bdi>{{ number_format($product->original_price, 0, ',', '.') }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                                                                </span>
+                                                                                            </del>
+                                                                                        @endif
+                                                                                        <ins aria-hidden="true">
+                                                                                            <span class="woocommerce-Price-amount amount">
+                                                                                                <bdi>{{ number_format($product->discounted_price, 0, ',', '.') }}&nbsp;<span class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
+                                                                                            </span>
+                                                                                        </ins>
+                                                                                    </span>
+                                                                                </div>
+                                                                                <div class="wd-add-btn wd-add-btn-replace">
+                                                                                    <a href="?add-to-cart={{ $product->id }}"
+                                                                                        class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"
+                                                                                        data-product_id="{{ $product->id }}"
+                                                                                        data-quantity="1"
+                                                                                        aria-label="Thêm vào giỏ hàng: &ldquo;{{ $product->name }}&rdquo;"
+                                                                                        rel="nofollow"
+                                                                                        data-success_message="&ldquo;{{ $product->name }}&rdquo; đã được thêm vào giỏ hàng của bạn">
+                                                                                        <span>Thêm vào giỏ hàng</span>
+                                                                                    </a>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="wd-carousel-item">
-                                                                    <div class="wd-product wd-with-labels wd-hover-fw-button wd-hover-with-fade wd-fade-off product-grid-item product type-product post-27681 status-publish instock product_cat-may-rua-chen-bat product_cat-may-rua-chen-bat-am-tu-toan-phan has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
-                                                                        data-loop="1" data-id="27681">
-                                                                        <div class="product-wrapper">
-                                                                            <div class="content-product-imagin"></div>
-                                                                            <div
-                                                                                class="product-element-top wd-quick-shop">
-                                                                                <a href="/assets/san-pham/may-rua-chen-bat-hafele-hdw-fi60d/"
-                                                                                    class="product-image-link">
-                                                                                    <div
-                                                                                        class="wd-product-grid-slider wd-fill">
-                                                                                        <div class="wd-product-grid-slide"
-                                                                                            data-image-url="/assets/wp-content/uploads/2024/07/HDW-FI60D.jpg"
-                                                                                            data-image-srcset="/assets/wp-content/uploads/2024/07/HDW-FI60D.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-600x600.jpg 600w"
-                                                                                            data-image-id="0"></div>
-                                                                                      
-                                                                                    </div>
-                                                                                   
-                                                                                    <div
-                                                                                        class="product-labels labels-rounded-sm">
-                                                                                        <span
-                                                                                            class="onsale product-label">-21%</span>
-                                                                                    </div><img loading="lazy"
-                                                                                        decoding="async" width="900"
-                                                                                        height="900"
-                                                                                        src="/assets/wp-content/uploads/2024/07/HDW-FI60D.jpg"
-                                                                                        class="attachment-full size-full"
-                                                                                        alt="Máy rửa chén bát Hafele HDW-FI60D"
-                                                                                        srcset="/assets/wp-content/uploads/2024/07/HDW-FI60D.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-FI60D-600x600.jpg 600w"
-                                                                                        sizes="(max-width: 900px) 100vw, 900px"
-                                                                                        title="Trang chủ 231">
-                                                                                </a>
-                                                                                
-                                                                            </div>
-                                                                            <div class="product-element-bottom">
-                                                                                <h3 class="wd-entities-title"><a
-                                                                                        href="/assets/san-pham/may-rua-chen-bat-hafele-hdw-fi60d/">Máy
-                                                                                        rửa chén bát Hafele
-                                                                                        HDW-FI60D</a></h3>
-                                                                                <div class="wrap-price">
-                                                                                    <span class="price"><del
-                                                                                            aria-hidden="true"><span
-                                                                                                class="woocommerce-Price-amount amount"><bdi>25.179.000&nbsp;<span
-                                                                                                        class="woocommerce-Price-currencySymbol">&#8363;</span></bdi>
-                                                                                            </span>
-                                                                                        </del> <span
-                                                                                            class="screen-reader-text">Giá
-                                                                                            gốc là:
-                                                                                            25.179.000&nbsp;&#8363;.</span><ins
-                                                                                            aria-hidden="true"><span
-                                                                                                class="woocommerce-Price-amount amount"><bdi>19.828.000&nbsp;<span
-                                                                                                        class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins>
-                                                                                        <span
-                                                                                            class="screen-reader-text">Giá
-                                                                                            hiện tại là:
-                                                                                            19.828.000&nbsp;&#8363;.</span>
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div
-                                                                                    class="wd-add-btn wd-add-btn-replace">
-                                                                                    <a href="?add-to-cart=27681"
-                                                                                        aria-describedby="woocommerce_loop_add_to_cart_link_describedby_27681"
-                                                                                        data-quantity="1"
-                                                                                        class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"
-                                                                                        data-product_id="27681"
-                                                                                        data-product_sku="HDW-FI60D"
-                                                                                        aria-label="Thêm vào giỏ hàng: &ldquo;Máy rửa chén bát Hafele HDW-FI60D&rdquo;"
-                                                                                        rel="nofollow"
-                                                                                        data-success_message="&ldquo;Máy rửa chén bát Hafele HDW-FI60D&rdquo; đã được thêm vào giỏ hàng của bạn"><span>Thêm
-                                                                                            vào giỏ hàng</span></a>
-                                                                                    <span
-                                                                                        id="woocommerce_loop_add_to_cart_link_describedby_27681"
-                                                                                        class="screen-reader-text">
-                                                                                    </span>
-                                                                                </div>
-                                                                                <div class="fade-in-block wd-scroll">
-                                                                                    <div class="hover-content-wrap">
-                                                                                        <div
-                                                                                            class="hover-content wd-more-desc">
-                                                                                            <div
-                                                                                                class="hover-content-inner wd-more-desc-inner">
-                                                                                                <table
-                                                                                                    class="woocommerce-product-attributes shop_attributes"
-                                                                                                    aria-label="Chi tiết sản phẩm">
-                                                                                                    <tr
-                                                                                                        class="woocommerce-product-attributes-item woocommerce-product-attributes-item--dimensions">
-                                                                                                        <th class="woocommerce-product-attributes-item__label"
-                                                                                                            scope="row">
-                                                                                                            <span
-                                                                                                                class="wd-attr-name">
-                                                                                                                <span
-                                                                                                                    class="wd-attr-name-label">
-                                                                                                                    Kích
-                                                                                                                    thước
-                                                                                                                </span>
-                                                                                                            </span>
-                                                                                                        </th>
-                                                                                                        <td
-                                                                                                            class="woocommerce-product-attributes-item__value">
-                                                                                                            59,8 &times;
-                                                                                                            57 &times;
-                                                                                                            82 cm</td>
-                                                                                                    </tr>
-                                                                                                    <tr
-                                                                                                        class="woocommerce-product-attributes-item woocommerce-product-attributes-item--attribute_pa_brand">
-                                                                                                        <th class="woocommerce-product-attributes-item__label"
-                                                                                                            scope="row">
-                                                                                                            <span
-                                                                                                                class="wd-attr-name">
-                                                                                                                <span
-                                                                                                                    class="wd-attr-name-label">
-                                                                                                                    Brand
-                                                                                                                </span>
-                                                                                                            </span>
-                                                                                                        </th>
-                                                                                                        <td
-                                                                                                            class="woocommerce-product-attributes-item__value">
-                                                                                                            <span
-                                                                                                                class="wd-attr-term">
-                                                                                                                <p>Hafele
-                                                                                                                </p>
-                                                                                                            </span>
-                                                                                                        </td>
-                                                                                                    </tr>
-                                                                                                </table>
-                                                                                            </div>
-                                                                                            <a href="#" rel="nofollow"
-                                                                                                class="wd-more-desc-btn"
-                                                                                                aria-label="Read more description"></a>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                            @endforeach
+                                                            
                                                             </div>
                                                         </div>
                                                         <div class="wd-nav-arrows wd-pos-sep wd-hover-1 wd-icon-1">
@@ -1096,6 +762,8 @@
                             </div>
                         </div>
                     </div>
+                    @endif
+                    @endforeach
                    
                  
                 </div>
