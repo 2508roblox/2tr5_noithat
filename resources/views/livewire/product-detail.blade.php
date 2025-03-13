@@ -8,14 +8,14 @@
 		href="/assets/wp-content/litespeed/css/3751fe65e11ecaecf9ebc84cda1249bf.css?ver=d7d14" />
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="pingback" href="">
-	<title>Bếp từ đơn Chef&#039;s EH-HL22A | Bếp từ Bình Dương</title>
+	<title>{{ $product->name }} | Bếp từ Bình Dương</title>
 	<meta name="description"
 		content="Bếp điện hồng ngoại đơn Chef&#039;s EH-HL22A được lắp ráp tại Việt Nam trên dây chuyền công nghệ từ Đức với các linh kiện nhập khẩu Châu Âu, đảm bảo uy tín về chất lượng." />
 	<meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
 	<link rel="canonical" href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/" />
 	<meta property="og:locale" content="vi_VN" />
 	<meta property="og:type" content="product" />
-	<meta property="og:title" content="Bếp từ đơn Chef&#039;s EH-HL22A | Bếp từ Bình Dương" />
+	<meta property="og:title" content="{{ $product->name }} | Bếp từ Bình Dương" />
 	<meta property="og:description"
 		content="Bếp điện hồng ngoại đơn Chef&#039;s EH-HL22A được lắp ráp tại Việt Nam trên dây chuyền công nghệ từ Đức với các linh kiện nhập khẩu Châu Âu, đảm bảo uy tín về chất lượng." />
 	<meta property="og:url" content="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/" />
@@ -26,7 +26,7 @@
 		content="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg" />
 	<meta property="og:image:width" content="900" />
 	<meta property="og:image:height" content="900" />
-	<meta property="og:image:alt" content="Bếp hồng ngoại Chef&#039;s EH-HL22A" />
+	<meta property="og:image:alt" content="{{ $product->name }}" />
 	<meta property="og:image:type" content="image/jpeg" />
 	<meta property="product:price:amount" content="2080000" />
 	<meta property="product:price:currency" content="VND" />
@@ -117,21 +117,36 @@
 												data-id="c1cdd21" data-element_type="widget"
 												data-widget_type="wd_wc_breadcrumb.default">
 												<div class="elementor-widget-container">
-													<nav class="wd-breadcrumbs woocommerce-breadcrumb"
-														aria-label="Breadcrumb"> <span typeof="v:Breadcrumb" class="">
-															<a href="https://shop.phanhoanggia.com" rel="v:url"
-																property="v:title">
-																Trang chủ </a>
+													<nav class="wd-breadcrumbs woocommerce-breadcrumb" aria-label="Breadcrumb"> 
+														<span typeof="v:Breadcrumb" class="">
+															<a href="{{ route('home') }}" rel="v:url" property="v:title">
+																Trang chủ 
+															</a>
 														</span>
-														<span class="wd-delimiter"></span> <span typeof="v:Breadcrumb"
-															class=" wd-last-link">
-															<a href="/assets/danh-muc-san-pham/bep-dien-hong-ngoai/"
-																rel="v:url" property="v:title">
-																Bếp điện hồng ngoại </a>
+														<span class="wd-delimiter"></span> 
+														<span typeof="v:Breadcrumb" class="wd-last-link">
+															<a href="{{ route('category', ['slug' => $product->category->slug ?? '']) }}" rel="v:url" property="v:title">
+																{{ $product->category->name ?? 'N/A' }} 
+															</a>
 														</span>
-														<span class="wd-delimiter"></span> <span class="wd-last">
-															Bếp hồng ngoại đơn Chef&#8217;s EH-HL22A </span>
+														<span class="wd-delimiter"></span> 
+														<span typeof="v:Breadcrumb" class="wd-last-link">
+															<a href="{{ route('category', ['slug' => $product->subCategory->slug ?? '']) }}" rel="v:url" property="v:title">
+																{{ $product->subCategory->name ?? 'N/A' }} 
+															</a>
+														</span>
+														<span class="wd-delimiter"></span> 
+														<span typeof="v:Breadcrumb" class="wd-last-link">
+															<a href="{{ route('category', ['slug' => $product->childSubCategory->slug ?? '']) }}" rel="v:url" property="v:title">
+																{{ $product->childSubCategory->name ?? 'N/A' }} 
+															</a>
+														</span>
+														<span class="wd-delimiter"></span> 
+														<span class="wd-last">
+															{{ $product->name }} 
+														</span>
 													</nav>
+													
 												</div>
 											</div>
 											<div class="elementor-element elementor-element-5a07c77 elementor-widget__width-auto elementor-hidden-mobile wd-single-nav text-left elementor-widget elementor-widget-wd_single_product_nav"
@@ -482,8 +497,7 @@
 														<div class="quantity">
 															<input type="button" value="-" class="minus btn" />
 															<label class="screen-reader-text"
-																for="quantity_67d1638f09610">Bếp hồng ngoại đơn
-																Chef&#039;s EH-HL22A số lượng</label>
+																for="quantity_67d1638f09610">{{ $product->name }}</label>
 															<input type="number" id="quantity_67d1638f09610"
 																class="input-text qty text" value="1"
 																aria-label="Số lượng sản phẩm" min="1" max=""
@@ -877,7 +891,11 @@
 							</section>
 							<style>
 								.elementor-kit-4 a {  
+}
+.elementor-kit-4 a.btn {
     color: white;
+    font-family: "Montserrat", Sans-serif;
+    font-weight: 600;
 }
 							</style>
 							<section

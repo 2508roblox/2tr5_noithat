@@ -252,7 +252,7 @@
                                                                                                                     class="wc-block-grid__product-price price">
                                                                                                                     <del
                                                                                                                         aria-hidden="true"><span
-                                                                                                                            class="woocommerce-Price-amount amount">25.179.000&nbsp;<span
+                                                                                                                            class="woocommerce-Price-amount amount">{{ number_format($product->original_price) }}&nbsp;<span
                                                                                                                                 class="woocommerce-Price-currencySymbol">&#8363;</span></span></del>
                                                                                                                     <span
                                                                                                                         class="screen-reader-text">Giá
@@ -260,7 +260,7 @@
                                                                                                                         là:
                                                                                                                         {{ number_format($product->original_price) }}&nbsp;&#8363;.</span><ins
                                                                                                                         aria-hidden="true"><span
-                                                                                                                            class="woocommerce-Price-amount amount">19.828.000&nbsp;<span
+                                                                                                                            class="woocommerce-Price-amount amount">{{ number_format($product->discounted_price) }}&nbsp;<span
                                                                                                                                 class="woocommerce-Price-currencySymbol">&#8363;</span></span></ins><span
                                                                                                                         class="screen-reader-text">Giá
                                                                                                                         hiện
@@ -305,7 +305,7 @@
                                                                 data-widget_type="wd_shop_archive_woocommerce_title.default">
                                                                 <div class="elementor-widget-container">
                                                                     <h1 class="entry-title title">
-                                                                        Bếp điện hồng ngoại</h1>
+                                                                        {{ $category->name }}</h1>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -379,13 +379,13 @@
                                                                        
                                                                         <div class="product-labels labels-rounded-sm">
                                                                             <span class="onsale product-label">    {{ round((1 - $product->discounted_price / $product->original_price) * 100) }}%
-</span>
+                                                                </span>
                                                                         </div>
                                                                         <img loading="lazy" width="900" height="900" src="{{asset('storage/' . $product->image) }}" class="attachment-large size-large" alt="{{ $product->name }}" />
                                                                     </a>
                                                                 </div>
                                                                 <div class="product-element-bottom">
-                                                                    <h3 class="wd-entities-title"><a href="{{ $product->url }}">{{ $product->name }}</a></h3>
+                                                                    <h3 class="wd-entities-title"><a href="{{ route('product.detail', ['slug' => $product->slug]) }}">{{ $product->name }}</a></h3>
                                                                     <div class="wrap-price">
                                                                         <span class="price">
                                                                             <del><bdi>{{ number_format($product->original_price, 0, ',', '.') }}&#8363;</bdi></del>

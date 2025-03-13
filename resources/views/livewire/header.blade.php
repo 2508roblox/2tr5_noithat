@@ -14,7 +14,7 @@
                 <div class="whb-flex-row whb-general-header-inner">
                     <div class="whb-column whb-col-left whb-visible-lg">
                         <div class="site-logo">
-                            <a href="https://shop.phanhoanggia.com/" class="wd-logo wd-main-logo" rel="home"
+                            <a href="{{route('home')}}" class="wd-logo wd-main-logo" rel="home"
                                 aria-label="Site logo">
                                 <img loading="lazy" width="2757" height="823"
                                     src="/assets/wp-content/uploads/2024/11/logo-phg-ngang-2.png"
@@ -120,8 +120,8 @@
                 <div class="whb-flex-row whb-header-bottom-inner">
                     <div class="whb-column whb-col-left whb-visible-lg">
                         <div
-                            class="wd-tools-element wd-header-sticky-nav wd-style-text wd-design-8 wd-close-menu-mouseout whb-z4o6eqi1znmtf82f1h6b">
-                            <a href="#" rel="nofollow" aria-label="Open sticky navigation">
+                            class="wd-tools-element  wd-style-text wd-design-8 wd-close-menu-mouseout whb-z4o6eqi1znmtf82f1h6b">
+                            <a href="{{ route('products' ) }}" aria-label="Open sticky navigation">
                                 <span class="wd-tools-inner">
                                     <span class="wd-tools-icon">
                                     </span><span class="wd-tools-text">Tất cả sản phẩm</span></span>
