@@ -2,6 +2,13 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\DashboardResource\Widgets\ContactsWidget;
+use App\Filament\Resources\DashboardResource\Widgets\DiscountedProductsWidget;
+use App\Filament\Resources\DashboardResource\Widgets\LatestProductsWidget;
+use App\Filament\Resources\DashboardResource\Widgets\NewProductsWidget;
+use App\Filament\Resources\DashboardResource\Widgets\TotalCategoriesWidget;
+use App\Filament\Resources\DashboardResource\Widgets\TotalContactsWidget;
+use App\Filament\Resources\DashboardResource\Widgets\TotalProductsWidget;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -28,7 +35,7 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->login()
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::Amber,  
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
@@ -39,6 +46,9 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
+                 TotalProductsWidget::class,
+                 NewProductsWidget::class,
+                 ContactsWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
