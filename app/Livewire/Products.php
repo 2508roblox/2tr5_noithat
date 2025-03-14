@@ -17,11 +17,12 @@ class Products extends Component
     public $maxPrice;
     public $category;
     public $sortBy = 'date'; // Mặc định là sắp xếp theo ngày mới nhất
-
+    public $search;
     public function mount(  Request $request)
     {
         $this->categories = Category::all();
         $this->products = $this->getProducts();
+        $this->search = $request->query('s'); // Lấy từ query string
         $this->minPrice = $request->query('min_price');
         $this->maxPrice = $request->query('max_price');
 
@@ -69,7 +70,9 @@ class Products extends Component
     public function getProducts()
     {
         $query = Product::query();
-
+        if (!empty($this->search)) {
+            $query->where('name', 'LIKE', '%' . $this->search . '%');
+        }
         // Lọc theo khoảng giá
         if ($this->minPrice !== null) {
             $query->where('discounted_price', '>=', $this->minPrice);

@@ -149,83 +149,7 @@
 													
 												</div>
 											</div>
-											<div class="elementor-element elementor-element-5a07c77 elementor-widget__width-auto elementor-hidden-mobile wd-single-nav text-left elementor-widget elementor-widget-wd_single_product_nav"
-												data-id="5a07c77" data-element_type="widget"
-												data-widget_type="wd_single_product_nav.default">
-												<div class="elementor-widget-container">
-													<div class="wd-products-nav">
-														<div class="wd-event-hover">
-															<a class="wd-product-nav-btn wd-btn-prev"
-																href="/assets/san-pham/bep-tu-chefs-eh-ih536/"
-																aria-label="Previous product"></a>
-															<div class="wd-dropdown">
-																<a href="/assets/san-pham/bep-tu-chefs-eh-ih536/"
-																	class="wd-product-nav-thumb">
-																	<img loading="lazy" width="600" height="600"
-																		src="/assets/wp-content/uploads/2024/06/EH-IH536-600x600.jpg"
-																		class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-																		alt="Bếp từ Chef&#039;s EH-IH536"
-																		decoding="async"
-																		srcset="/assets/wp-content/uploads/2024/06/EH-IH536-600x600.jpg 600w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-IH536-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-IH536-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-IH536-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-IH536.jpg 900w"
-																		sizes="(max-width: 600px) 100vw, 600px" /> </a>
-																<div class="wd-product-nav-desc">
-																	<a href="/assets/san-pham/bep-tu-chefs-eh-ih536/"
-																		class="wd-entities-title">
-																		Bếp từ ba Chef's EH-IH536 </a><span
-																		class="price">
-																		<del aria-hidden="true"><span
-																				class="woocommerce-Price-amount amount">19.500.000&nbsp;<span
-																					class="woocommerce-Price-currencySymbol">&#8363;</span></span></del>
-																		<span class="screen-reader-text">Giá gốc là:
-																			19.500.000&nbsp;&#8363;.</span><ins
-																			aria-hidden="true"><span
-																				class="woocommerce-Price-amount amount">15.600.000&nbsp;<span
-																					class="woocommerce-Price-currencySymbol">&#8363;</span></span></ins><span
-																			class="screen-reader-text">Giá hiện tại là:
-																			15.600.000&nbsp;&#8363;.</span> </span>
-																</div>
-															</div>
-														</div>
-														<a href="/assets/cua-hang/"
-															class="wd-product-nav-btn wd-btn-back wd-tooltip">
-															<span>
-																Back to products </span>
-														</a>
-														<div class="wd-event-hover">
-															<a class="wd-product-nav-btn wd-btn-next"
-																href="/assets/san-pham/bep-tu-chefs-eh-ih20/"
-																aria-label="Next product"></a>
-															<div class="wd-dropdown">
-																<a href="/assets/san-pham/bep-tu-chefs-eh-ih20/"
-																	class="wd-product-nav-thumb">
-																	<img loading="lazy" width="600" height="600"
-																		src="/assets/wp-content/uploads/2024/06/EH-IH20-3-600x600.jpg"
-																		class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
-																		alt="Bếp từ Chef&#039;s EH-IH20"
-																		decoding="async"
-																		srcset="/assets/wp-content/uploads/2024/06/EH-IH20-3-600x600.jpg 600w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-IH20-3-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-IH20-3-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-IH20-3-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-IH20-3.jpg 900w"
-																		sizes="(max-width: 600px) 100vw, 600px" /> </a>
-																<div class="wd-product-nav-desc">
-																	<a href="/assets/san-pham/bep-tu-chefs-eh-ih20/"
-																		class="wd-entities-title">
-																		Bếp từ đơn Chef's EH-IH20 </a><span
-																		class="price">
-																		<del aria-hidden="true"><span
-																				class="woocommerce-Price-amount amount">1.490.000&nbsp;<span
-																					class="woocommerce-Price-currencySymbol">&#8363;</span></span></del>
-																		<span class="screen-reader-text">Giá gốc là:
-																			1.490.000&nbsp;&#8363;.</span><ins
-																			aria-hidden="true"><span
-																				class="woocommerce-Price-amount amount">1.415.000&nbsp;<span
-																					class="woocommerce-Price-currencySymbol">&#8363;</span></span></ins><span
-																			class="screen-reader-text">Giá hiện tại là:
-																			1.415.000&nbsp;&#8363;.</span> </span>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
+										 
 										</div>
 									</div>
 								</div>
@@ -252,74 +176,49 @@
 																	class="woocommerce-product-gallery__wrapper wd-carousel wd-grid"
 																	style="--wd-col-lg:1;--wd-col-md:1;--wd-col-sm:1;">
 																	<div class="wd-carousel-wrap">
+																		<!-- Main Product Image -->
 																		<div class="wd-carousel-item">
 																			<figure
-																				data-thumb="/assets/wp-content/uploads/2024/06/EH-HL22A-150x150.jpg"
+																				data-thumb="{{ asset('storage/' . $product->image) }}"
 																				class="woocommerce-product-gallery__image">
-																				<a data-elementor-open-lightbox="no"
-																					href="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg"><img
-																						loading="lazy" width="900"
-																						height="900"
-																						src="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg"
-																						class="wp-post-image wp-post-image"
-																						alt="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						title="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						data-caption="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						data-src="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg"
-																						data-large_image="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg"
-																						data-large_image_width="900"
-																						data-large_image_height="900"
-																						decoding="async"
-																						srcset="/assets/wp-content/uploads/2024/06/EH-HL22A.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-600x600.jpg 600w"
-																						sizes="(max-width: 900px) 100vw, 900px" /></a>
-																			</figure>
-																		</div>
-																		<div class="wd-carousel-item">
-																			<figure
-																				data-thumb="wp-content/uploads/2024/06/EH-HL22A-5.jpg"
-																				class="woocommerce-product-gallery__image">
-																				<a data-elementor-open-lightbox="no"
-																					href="/assets/wp-content/uploads/2024/06/EH-HL22A-5.jpg">
-																					<img loading="lazy" width="900"
-																						height="900"
-																						src="/assets/wp-content/uploads/2024/06/EH-HL22A-5.jpg"
-																						class=""
-																						alt="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						title="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						data-caption="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						data-src="/assets/wp-content/uploads/2024/06/EH-HL22A-5.jpg"
-																						data-large_image="/assets/wp-content/uploads/2024/06/EH-HL22A-5.jpg"
-																						data-large_image_width="900"
-																						data-large_image_height="900"
-																						decoding="async"
-																						sizes="(max-width: 900px) 100vw, 900px" />
+																				<a data-elementor-open-lightbox="no" href="{{ asset('storage/' . $product->image) }}">
+																					<img loading="lazy" width="900" height="900"
+																						 src="{{ asset('storage/' . $product->image) }}"
+																						 class="wp-post-image wp-post-image"
+																						 alt="{{ $product->name }}"
+																						 title="{{ $product->name }}"
+																						 data-caption="{{ $product->name }}"
+																						 data-src="{{ asset('storage/' . $product->image) }}"
+																						 data-large_image="{{ asset('storage/' . $product->image) }}"
+																						 data-large_image_width="900"
+																						 data-large_image_height="900"
+																						 decoding="async"/>
 																				</a>
 																			</figure>
 																		</div>
-																		<div class="wd-carousel-item">
-																			<figure
-																				data-thumb="/assets/wp-content/uploads/2024/06/EH-HL22A-4-150x150.jpg"
-																				class="woocommerce-product-gallery__image">
-																				<a data-elementor-open-lightbox="no"
-																					href="/assets/wp-content/uploads/2024/06/EH-HL22A-4.jpg">
-																					<img loading="lazy" width="900"
-																						height="900"
-																						src="/assets/wp-content/uploads/2024/06/EH-HL22A-4.jpg"
-																						class=""
-																						alt="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						title="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						data-caption="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																						data-src="/assets/wp-content/uploads/2024/06/EH-HL22A-4.jpg"
-																						data-large_image="/assets/wp-content/uploads/2024/06/EH-HL22A-4.jpg"
-																						data-large_image_width="900"
-																						data-large_image_height="900"
-																						decoding="async"
-																						srcset="/assets/wp-content/uploads/2024/06/EH-HL22A-4.jpg 900w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-4-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-4-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-4-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-4-600x600.jpg 600w"
-																						sizes="(max-width: 900px) 100vw, 900px" />
-																				</a>
-																			</figure>
-																		</div>
-																		 
+																	
+																		<!-- Additional Images -->
+																		@foreach ($product->additional_images as $additionalImage)
+																			<div class="wd-carousel-item">
+																				<figure
+																					data-thumb="{{ asset('storage/' . $additionalImage) }}"
+																					class="woocommerce-product-gallery__image">
+																					<a data-elementor-open-lightbox="no" href="{{ asset('storage/' . $additionalImage) }}">
+																						<img loading="lazy" width="900" height="900"
+																							 src="{{ asset('storage/' . $additionalImage) }}"
+																							 class=""
+																							 alt="{{ $product->name }}"
+																							 title="{{ $product->name }}"
+																							 data-caption="{{ $product->name }}"
+																							 data-src="{{ asset('storage/' . $additionalImage) }}"
+																							 data-large_image="{{ asset('storage/' . $additionalImage) }}"
+																							 data-large_image_width="900"
+																							 data-large_image_height="900"
+																							 decoding="async"/>
+																					</a>
+																				</figure>
+																			</div>
+																		@endforeach
 																	</div>
 																</figure>
 																<div
@@ -342,36 +241,31 @@
 														</div>
 														<div class="wd-carousel-container wd-gallery-thumb">
 															<div class="wd-carousel-inner">
-																<div class="wd-carousel wd-grid"
-																	style="--wd-col-lg:4;--wd-col-md:4;--wd-col-sm:3;">
+																<div class="wd-carousel wd-grid" style="--wd-col-lg:4; --wd-col-md:4; --wd-col-sm:3;">
 																	<div class="wd-carousel-wrap">
-																		<div class="wd-carousel-item ">
+																		<!-- Main Product Image -->
+																		<div class="wd-carousel-item">
 																			<img loading="lazy" width="150" height="150"
-																				src="/assets/wp-content/uploads/2024/06/EH-HL22A-150x150.jpg"
+																				src="{{ asset('storage/' . $product->image) }}"
 																				class="attachment-150x0 size-150x0"
-																				alt="Bếp hồng ngoại Chef&#039;s EH-HL22A"
+																				alt="{{ $product->name }}"
 																				decoding="async"
-																				srcset="/assets/wp-content/uploads/2024/06/EH-HL22A-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A-600x600.jpg 600w, https://shop.phanhoanggia.com/wp-content/uploads/2024/06/EH-HL22A.jpg 900w"
+																				srcset="{{ asset('storage/' . $product->image) }} 150w, {{ asset('storage/' . $product->image) }} 300w, {{ asset('storage/' . $product->image) }} 600w, {{ asset('storage/' . $product->image) }} 768w, {{ asset('storage/' . $product->image) }}"
 																				sizes="(max-width: 150px) 100vw, 150px" />
 																		</div>
-																		<div class="wd-carousel-item ">
-																			<img loading="lazy" width="150" height="150"
-																				src="/assets/wp-content/uploads/2024/06/EH-HL22A-5.jpg"
-																				class="attachment-150x0 size-150x0"
-																				alt="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																				decoding="async"
-																				srcset="/assets/wp-content/uploads/2024/06/EH-HL22A-5.jpg  "
-																				sizes="(max-width: 150px) 100vw, 150px" />
-																		</div>
-																		<div class="wd-carousel-item ">
-																			<img loading="lazy" width="150" height="150"
-																				src="/assets/wp-content/uploads/2024/06/EH-HL22A-4.jpg"
-																				class="attachment-150x0 size-150x0"
-																				alt="Bếp hồng ngoại Chef&#039;s EH-HL22A"
-																				decoding="async"
-																				sizes="(max-width: 150px) 100vw, 150px" />
-																		</div>
-																	 
+																		
+																		<!-- Additional Images -->
+																		@foreach ($product->additional_images as $additionalImage)
+																			<div class="wd-carousel-item">
+																				<img loading="lazy" width="150" height="150"
+																					src="{{ asset('storage/' . $additionalImage) }}"
+																					class="attachment-150x0 size-150x0"
+																					alt="{{ $product->name }}"
+																					decoding="async"
+																					srcset="{{ asset('storage/' . $additionalImage) }} 150w, {{ asset('storage/' . $additionalImage) }} 300w, {{ asset('storage/' . $additionalImage) }} 600w"
+																					sizes="(max-width: 150px) 100vw, 150px" />
+																			</div>
+																		@endforeach
 																	</div>
 																</div>
 																<div
@@ -398,7 +292,7 @@
 												data-widget_type="wd_single_product_title.default">
 												<div class="elementor-widget-container">
 													<h1 class="product_title entry-title wd-entities-title">
-														Bếp hồng ngoại đơn Chef&#8217;s EH-HL22A</h1>
+														{{ $product->name }}</h1>
 												</div>
 											</div>
 											<div class="elementor-element elementor-element-a8eead4 wd-wc-notices elementor-widget elementor-widget-wd_wc_notices"
@@ -424,7 +318,7 @@
 																			<span class="meta-label">
 																				Mã sản phẩm: </span>
 																			<span class="sku">
-																				EH-HL22A </span>
+																				{{ $product->product_code }} </span>
 																		</span>
 																	</div>
 																</div>
@@ -438,34 +332,19 @@
 												data-widget_type="wd_single_product_short_description.default">
 												<div class="elementor-widget-container">
 													<div class="woocommerce-product-details__short-description">
-														<table>
-															<tbody>
+														@php
+														$attributes =  $product->attributes ;
+													@endphp
+													<table>
+														<tbody>
+															@foreach ($attributes as $attribute => $value)
 																<tr>
-																	<td><b>Thương hiệu:</b></td>
-																	<td><b>CHEF’S</b></td>
+																	<td><b>{{ $attribute }}:</b></td>
+																	<td><span style="font-weight: 400;">{{ $value }}</span></td>
 																</tr>
-																<tr>
-																	<td><b>Xuất xứ:</b></td>
-																	<td><span style="font-weight: 400;">Lắp ráp Việt
-																			Nam</span></td>
-																</tr>
-																<tr>
-																	<td><b>Kích thước máy:</b></td>
-																	<td><span style="font-weight: 400;">310R x 385S x
-																			53C mm</span></td>
-																</tr>
-																<tr>
-																	<td><b>Bảo hành:</b></td>
-																	<td><span style="font-weight: 400;">36 Tháng</span>
-																	</td>
-																</tr>
-																<tr>
-																	<td><b>Hotline:</b></td>
-																	<td><span style="font-weight: 400;">0933 427
-																			499</span></td>
-																</tr>
-															</tbody>
-														</table>
+															@endforeach
+														</tbody>
+													</table>
 														<div id="eJOY__extension_root"
 															class="eJOY__extension_root_class" style="all: unset;">
 														</div>
@@ -477,40 +356,29 @@
 												data-widget_type="wd_single_product_price.default">
 												<div class="elementor-widget-container">
 													<p class="price"><del aria-hidden="true"><span
-																class="woocommerce-Price-amount amount"><bdi>2.190.000&nbsp;<span
+																class="woocommerce-Price-amount amount"><bdi>{{ number_format($product->original_price, 0, ',', '.') }}&nbsp;<span
 																		class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del>
 														<span class="screen-reader-text">Giá gốc là:
-															2.190.000&nbsp;&#8363;.</span><ins aria-hidden="true"><span
-																class="woocommerce-Price-amount amount"><bdi>2.080.000&nbsp;<span
+															{{ number_format($product->original_price, 0, ',', '.') }}&nbsp;&#8363;.</span><ins aria-hidden="true"><span
+																class="woocommerce-Price-amount amount"><bdi>{{ number_format($product->discounted_price, 0, ',', '.') }}&nbsp;<span
 																		class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins><span
 															class="screen-reader-text">Giá hiện tại là:
-															2.080.000&nbsp;&#8363;.</span></p>
+															{{ number_format($product->discounted_price, 0, ',', '.') }}&nbsp;&#8363;.</span></p>
 												</div>
 											</div>
 											<div class="elementor-element elementor-element-733b9dc wd-btn-design-full wd-single-add-cart text-left wd-design-default wd-swatch-layout-default wd-stock-status-off elementor-widget elementor-widget-wd_single_product_add_to_cart"
 												data-id="733b9dc" data-element_type="widget" id="cart"
 												data-widget_type="wd_single_product_add_to_cart.default">
 												<div class="elementor-widget-container">
-													<form class="cart"
-														action="/assets/san-pham/bep-hong-ngoai-chefs-eh-hl22a/"
-														method="post" enctype='multipart/form-data'>
+													<form wire:submit.prevent="addToCart" class="cart">
 														<div class="quantity">
-															<input type="button" value="-" class="minus btn" />
-															<label class="screen-reader-text"
-																for="quantity_67d1638f09610">{{ $product->name }}</label>
-															<input type="number" id="quantity_67d1638f09610"
-																class="input-text qty text" value="1"
-																aria-label="Số lượng sản phẩm" min="1" max=""
-																name="quantity" step="1" placeholder=""
-																inputmode="numeric" autocomplete="off"><input
-																type="button" value="+" class="plus btn" />
-														</div><button type="submit" name="add-to-cart" value="26178"
-															class="single_add_to_cart_button button alt">Thêm vào giỏ
-															hàng</button><button id="wd-add-to-cart" type="submit"
-															name="wd-add-to-cart" value="26178"
-															class="wd-buy-now-btn button alt">
-															Mua ngay </button>
+															<input type="button" value="-" class="minus btn" wire:click="quantity = max(1, quantity - 1)" />
+															<input type="number" class="input-text qty text" wire:model="quantity" min="1" step="1">
+															<input type="button" value="+" class="plus btn" wire:click="quantity++" />
+														</div>
+														<button type="submit" class="single_add_to_cart_button button alt">Thêm vào giỏ hàng</button>
 													</form>
+													
 												</div>
 											</div>
 											<section
@@ -545,181 +413,7 @@
 														<div data-elementor-type="wp-post" data-elementor-id="1101"
 															class="elementor elementor-1101"
 															data-elementor-post-type="cms_block">
-															<section
-																class="wd-negative-gap elementor-section elementor-top-section elementor-element elementor-element-c8df3b4 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-																data-id="c8df3b4" data-element_type="section">
-																<div
-																	class="elementor-container elementor-column-gap-default">
-																	<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-bc73f16"
-																		data-id="bc73f16" data-element_type="column">
-																		<div
-																			class="elementor-widget-wrap elementor-element-populated">
-																			<section
-																				class="wd-negative-gap elementor-section elementor-inner-section elementor-element elementor-element-42ce691 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-																				data-id="42ce691"
-																				data-element_type="section">
-																				<div
-																					class="elementor-container elementor-column-gap-default">
-																					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-99095a9"
-																						data-id="99095a9"
-																						data-element_type="column">
-																						<div
-																							class="elementor-widget-wrap elementor-element-populated">
-																							<div class="elementor-element elementor-element-38b2eac elementor-widget elementor-widget-wd_list"
-																								data-id="38b2eac"
-																								data-element_type="widget"
-																								data-widget_type="wd_list.default">
-																								<div
-																									class="elementor-widget-container">
-																									<ul
-																										class="wd-list color-scheme-custom wd-fontsize-xs wd-type-icon wd-style-rounded text-left wd-shape-icon">
-																										<li
-																											class="elementor-repeater-item-f3769ef">
-																											<span
-																												class="wd-icon"><svg
-																													class="e-font-icon-svg e-fas-store"
-																													viewBox="0 0 616 512"
-																													xmlns="http://www.w3.org/2000/svg">
-																													<path
-																														d="M602 118.6L537.1 15C531.3 5.7 521 0 510 0H106C95 0 84.7 5.7 78.9 15L14 118.6c-33.5 53.5-3.8 127.9 58.8 136.4 4.5.6 9.1.9 13.7.9 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18 20.1 44.3 33.1 73.8 33.1 29.6 0 55.8-13 73.8-33.1 18.1 20.1 44.3 33.1 73.8 33.1 4.7 0 9.2-.3 13.7-.9 62.8-8.4 92.6-82.8 59-136.4zM529.5 288c-10 0-19.9-1.5-29.5-3.8V384H116v-99.8c-9.6 2.2-19.5 3.8-29.5 3.8-6 0-12.1-.4-18-1.2-5.6-.8-11.1-2.1-16.4-3.6V480c0 17.7 14.3 32 32 32h448c17.7 0 32-14.3 32-32V283.2c-5.4 1.6-10.8 2.9-16.4 3.6-6.1.8-12.1 1.2-18.2 1.2z">
-																													</path>
-																												</svg></span>
-																											<span
-																												class="wd-list-content list-content">
-																												Khuyến
-																												mãi chỉ
-																												có ở
-																												Phan
-																												Hoàng
-																												Gia
-																											</span>
-																										</li>
-																									</ul>
-																								</div>
-																							</div>
-																							<div class="elementor-element elementor-element-7fa89a5 elementor-widget__width-auto elementor-widget elementor-widget-wd_text_block"
-																								data-id="7fa89a5"
-																								data-element_type="widget"
-																								data-widget_type="wd_text_block.default">
-																								<div
-																									class="elementor-widget-container">
-																									<div
-																										class="wd-text-block reset-last-child text-left">
-																										<p>Miễn phí vận
-																											chuyển, lắp
-																											đặt tất cả
-																											các tỉnh
-																											thành có chi
-																											nhánh <span
-																												style="color: #1f5129;"><strong>Phan
-																													Hoàng
-																													Gia</strong></span>
-																										</p>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-8fea78e"
-																						data-id="8fea78e"
-																						data-element_type="column">
-																						<div
-																							class="elementor-widget-wrap elementor-element-populated">
-																							<div class="elementor-element elementor-element-d6c2d3e elementor-widget__width-auto elementor-widget elementor-widget-wd_text_block"
-																								data-id="d6c2d3e"
-																								data-element_type="widget"
-																								data-widget_type="wd_text_block.default">
-																								<div
-																									class="elementor-widget-container">
-																									<div
-																										class="wd-text-block reset-last-child text-left color-title">
-																										<p>Miễn Phí</p>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</section>
-																			<section
-																				class="wd-negative-gap elementor-section elementor-inner-section elementor-element elementor-element-f0777b5 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-																				data-id="f0777b5"
-																				data-element_type="section">
-																				<div
-																					class="elementor-container elementor-column-gap-default">
-																					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-7159bb7"
-																						data-id="7159bb7"
-																						data-element_type="column">
-																						<div
-																							class="elementor-widget-wrap elementor-element-populated">
-																							<div class="elementor-element elementor-element-238a014 elementor-widget elementor-widget-wd_list"
-																								data-id="238a014"
-																								data-element_type="widget"
-																								data-widget_type="wd_list.default">
-																								<div
-																									class="elementor-widget-container">
-																									<ul
-																										class="wd-list color-scheme-custom wd-fontsize-xs wd-type-icon wd-style-rounded text-left wd-shape-icon">
-																										<li
-																											class="elementor-repeater-item-f3769ef">
-																											<span
-																												class="wd-icon"><svg
-																													class="e-font-icon-svg e-fas-plane-departure"
-																													viewBox="0 0 640 512"
-																													xmlns="http://www.w3.org/2000/svg">
-																													<path
-																														d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z">
-																													</path>
-																												</svg></span>
-																											<span
-																												class="wd-list-content list-content">
-																												Giao
-																												hàng
-																												nhanh
-																											</span>
-																										</li>
-																									</ul>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																					<div class="elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-c94d4b2"
-																						data-id="c94d4b2"
-																						data-element_type="column">
-																						<div
-																							class="elementor-widget-wrap elementor-element-populated">
-																							<div class="elementor-element elementor-element-38f417a elementor-widget__width-auto elementor-widget elementor-widget-wd_text_block"
-																								data-id="38f417a"
-																								data-element_type="widget"
-																								data-widget_type="wd_text_block.default">
-																								<div
-																									class="elementor-widget-container">
-																									<div
-																										class="wd-text-block reset-last-child text-left">
-																										<p>2-3 Ngày</p>
-																									</div>
-																								</div>
-																							</div>
-																							<div class="elementor-element elementor-element-81b252a elementor-widget__width-auto elementor-widget elementor-widget-wd_text_block"
-																								data-id="81b252a"
-																								data-element_type="widget"
-																								data-widget_type="wd_text_block.default">
-																								<div
-																									class="elementor-widget-container">
-																									<div
-																										class="wd-text-block reset-last-child text-left color-title">
-																										<p>Miễn Phí</p>
-																									</div>
-																								</div>
-																							</div>
-																						</div>
-																					</div>
-																				</div>
-																			</section>
-																		</div>
-																	</div>
-																</div>
-															</section>
+													 
 															<section
 																class="wd-negative-gap elementor-section elementor-top-section elementor-element elementor-element-0261246 elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 																data-id="0261246" data-element_type="section">
@@ -786,7 +480,7 @@
 																									<div
 																										class="wd-text-block reset-last-child text-left">
 																										<p><a
-																												href="https://phanhoanggia.com/chinh-sach-bao-hanh/"><i>Chính
+																												href="#"><i>Chính
 																													sách
 																													bảo
 																													hành</i></a>
@@ -854,7 +548,7 @@
 																									<div
 																										class="wd-text-block reset-last-child text-left">
 																										<p><a
-																												href="https://phanhoanggia.com/chinh-sach-doi-tra/"><i>Chính
+																												href="#"><i>Chính
 																													sách
 																													đổi
 																													trả</i></a>
@@ -924,130 +618,7 @@
 														SẢN PHẨM</p>
 												</div>
 											</div>
-											<div class="elementor-element elementor-element-7dc00b5 wd-single-content elementor-widget elementor-widget-wd_single_product_content"
-												data-id="7dc00b5" data-element_type="widget"
-												data-widget_type="wd_single_product_content.default">
-												<div class="elementor-widget-container">
-													<p>Bếp điện hồng ngoại đơn Chef&#8217;s EH-HL22A được lắp ráp tại
-														Việt Nam trên dây chuyền công nghệ từ Đức với các linh kiện nhập
-														khẩu Châu Âu, đảm bảo uy tín về chất lượng.</p>
-													<h2>1. Đặc điểm nổi bật của bếp hồng ngoại Chef&#8217;s EH-HL22A
-													</h2>
-													<ul>
-														<li>Lắp ráp tại Việt Nam.</li>
-														<li>Công suất cực đại 2000W.</li>
-														<li>Sử dụng mâm hồng ngoại 2 vòng nhiệt.</li>
-														<li>Bếp có thể lắp đặt âm hoặc dương.</li>
-														<li>Vỏ thép sơn tĩnh điện, kiểu dáng hiện đại.</li>
-														<li>Mặt kính gốm nguyên khối, chịu nhiệt đến 1000 độ C</li>
-														<li>Vành inox sang trọng, kiểu dáng hiện đại.</li>
-														<li>Cảnh báo nhiệt dư vùng nấu.</li>
-														<li>Tự động tắt bếp sau 2h nếu bị quên</li>
-														<li>Khóa an toàn trẻ em.</li>
-														<li>Tùy chỉnh hẹn giờ thông mình.</li>
-														<li>Bàn phím cảm ứng siêu nhạy, cả khi tay ướt.</li>
-														<li>Hiệu suất cao, rút ngắn thời gian nấu.</li>
-													</ul>
-													<h2>2. Thông số kỹ thuật của bếp hồng ngoại Chef&#8217;s EH-HL22A
-													</h2>
-													<table dir="ltr" style="height: 334px;" border="1" width="889"
-														cellspacing="0" cellpadding="0">
-														<tbody>
-															<tr>
-																<td data-sheets-value="{">Mã sản phẩm</td>
-																<td data-sheets-value="{"> EH-HL22A</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Loại sản phẩm</td>
-																<td data-sheets-value="{"> Bếp hồng ngoại đơn</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Màu sắc</td>
-																<td data-sheets-value="{"> Đen</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Mặt kính</td>
-																<td data-sheets-value="{"> ceramic</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Mâm nhiệt</td>
-																<td data-sheets-value="{"> E.G.O</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Công suất</td>
-																<td data-sheets-value="{"> 2000W</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Hẹn giờ</td>
-																<td data-sheets-value="{"> Có</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Tính năng an toàn</td>
-																<td></td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Cảnh báo nhiệt dư</td>
-																<td data-sheets-value="{"> Có</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Khóa an toàn trẻ em</td>
-																<td data-sheets-value="{"> Có</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Tự động tắt bếp khi quên</td>
-																<td data-sheets-value="{"> Có</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Thông số khác</td>
-																<td></td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Điện áp</td>
-																<td data-sheets-value="{"> 160-240VAC</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Nhiệt độ đun</td>
-																<td data-sheets-value="{"> 60-280 độ C</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Kích thước</td>
-																<td data-sheets-value="{"> 310x385x53 mm</td>
-															</tr>
-															<tr>
-																<td data-sheets-value="{"> Trọng lượng</td>
-																<td data-sheets-value="{"> 3.5 kg</td>
-															</tr>
-														</tbody>
-													</table>
-													<p>&nbsp;</p>
-													<h2>3. Tính năng thông minh và an toàn của bếp hồng ngoại EH-HL22A
-													</h2>
-													<ul>
-														<li><strong>Hẹn giờ: </strong>Bếp có thể hẹn giờ nấu, đến 8 giờ,
-															người dùng có thể hẹn giờ nấu để có thể tranh thủ thời gian
-															làm những công việc khác mà không phải canh chừng tắt bếp.
-														</li>
-														<li><strong>Tạm dừng: </strong>Bếp có thể tạm dừng trong 1 phút.
-															Khi kích hoạt tính năng bếp sẽ tạm thời dừng hoạt động. Sau
-															khoảng thời gian tạm dừng,, nếu không có tác động vào bếp,
-															bếp sẽ tự động tắt.</li>
-														<li><strong>Khóa an toàn trẻ em: </strong>Nhấn vào phím khóa 1s
-															để kích hoạt tính năng khóa. Lúc này, các phím trên bếp sẽ
-															bị vô hiệu hóa (chỉ mở nút nguồn và Khóa). Tính năng này
-															được ứng dụng tiện lợi đặc biệt là trong những nhà có trẻ
-															em.</li>
-														<li><strong>Cảnh báo nhiệt dư: </strong>Sau khi sử dụng, nếu
-															vùng nấu mặt bếp còn nóng, màn hình LED sẽ hiển thị chữ H để
-															cảnh báo để người dùng không chạm tay vào mặt bếp gây bỏng.
-															Khi nhiệt độ mặt bếp giảm xuống mức an toàn, đèn báo chữ H
-															sẽ tự động tắt.</li>
-														<li><strong>Tự động tắt bếp sau 2h nếu bị quên: </strong>Khi
-															không có tác động vào bàn phím trong 2h, bếp sẽ tự động tắt
-															để đảm bảo an toàn cho bếp, tránh trường hợp người dùng quên
-															ko đặt nồi hay quên không tắt bếp.</li>
-													</ul>
-												</div>
-											</div>
+											{!! $product->product_info !!}
 											<div class="elementor-element elementor-element-3bf79fa elementor-widget elementor-widget-wd_button"
 												data-id="3bf79fa" data-element_type="widget"
 												data-widget_type="wd_button.default">
@@ -1113,7 +684,7 @@
 																		<div class="liner-continer">
 																			<span
 																				class="woodmart-title-container title wd-fontsize-m">CAM
-																				KẾT CỦA PHAN HOÀNG GIA</span>
+																				KẾT CỦA CG Home</span>
 																		</div>
 																	</div>
 																</div>
@@ -1137,7 +708,7 @@
 																		<div class="elementor-icon-box-content">
 																			<p class="elementor-icon-box-title">
 																				<span>
-																					Những sản phẩm của Phan Hoàng Gia là
+																					Những sản phẩm của CG Home là
 																					những sản phẩm chính hãng, nói không
 																					với sản phẩm kém chất lượng. </span>
 																			</p>
@@ -1190,149 +761,8 @@
 									</div>
 								</div>
 							</section>
-							<section
-								class="wd-negative-gap elementor-section elementor-top-section elementor-element elementor-element-ff7c99b elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-								data-id="ff7c99b" data-element_type="section"
-								data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-								<div class="elementor-container elementor-column-gap-default">
-									<div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-c6002b7"
-										data-id="c6002b7" data-element_type="column">
-										<div class="elementor-widget-wrap elementor-element-populated">
-											<div class="elementor-element elementor-element-2e1f55e wd-width-100 elementor-widget elementor-widget-wd_title"
-												data-id="2e1f55e" data-element_type="widget"
-												data-widget_type="wd_title.default">
-												<div class="elementor-widget-container">
-													<div
-														class="title-wrapper wd-set-mb reset-last-child wd-title-color-default wd-title-style-default wd-title-size-default text-left">
-														<div class="liner-continer">
-															<span
-																class="woodmart-title-container title wd-fontsize-l">ĐÁNH
-																GIÁ CỦA KHÁCH HÀNG</span>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="elementor-element elementor-element-184a90c wd-layout-two-column wd-single-reviews wd-form-pos-before elementor-widget elementor-widget-wd_single_product_reviews"
-												data-id="184a90c" data-element_type="widget"
-												data-widget_type="wd_single_product_reviews.default">
-												<div class="elementor-widget-container">
-													<div id="reviews" class="woocommerce-Reviews"
-														data-product-id="26178">
-														<div id="comments">
-															<div class="wd-reviews-heading">
-																<div class="wd-reviews-tools">
-																	<h2 class="woocommerce-Reviews-title">
-																		Đánh giá</h2>
-																</div>
-															</div>
-															<div class="wd-reviews-content">
-																<p class="woocommerce-noreviews">Chưa có đánh giá nào.
-																</p>
-															</div>
-															<div class="wd-loader-overlay wd-fill"></div>
-														</div>
-														<div id="review_form_wrapper">
-															<div id="review_form">
-																<div id="respond" class="comment-respond">
-																	<span id="reply-title"
-																		class="comment-reply-title title">Hãy là người
-																		đầu tiên nhận xét &ldquo;Bếp hồng ngoại đơn
-																		Chef&#8217;s EH-HL22A&rdquo; <small><a
-																				rel="nofollow"
-																				id="cancel-comment-reply-link"
-																				href="/san-pham/bep-hong-ngoai-chefs-eh-hl22a/#respond"
-																				style="display:none;">Hủy</a></small></span>
-																	<form
-																		action="/assets/wp-comments-post.php"
-																		method="post" id="commentform"
-																		class="comment-form" novalidate>
-																		<p class="comment-notes"><span
-																				id="email-notes">Email của bạn sẽ không
-																				được hiển thị công khai.</span> <span
-																				class="required-field-message">Các
-																				trường bắt buộc được đánh dấu <span
-																					class="required">*</span></span></p>
-																		<div class="comment-form-rating"><label
-																				for="rating">Đánh giá của bạn&nbsp;<span
-																					class="required">*</span></label><select
-																				name="rating" id="rating" required>
-																				<option value="">Xếp hạng&hellip;
-																				</option>
-																				<option value="5">Rất tốt</option>
-																				<option value="4">Tốt</option>
-																				<option value="3">Trung bình</option>
-																				<option value="2">Không tệ</option>
-																				<option value="1">Rất tệ</option>
-																			</select></div>
-																		<p class="comment-form-comment"><label
-																				for="comment">Nhận xét của
-																				bạn&nbsp;<span
-																					class="required">*</span></label><textarea
-																				id="comment" name="comment" cols="45"
-																				rows="8" required></textarea></p>
-																		<p class="comment-form-author"><label
-																				for="author">Tên&nbsp;<span
-																					class="required">*</span></label><input
-																				id="author" name="author" type="text"
-																				value="" size="30" required /></p>
-																		<p class="comment-form-email"><label
-																				for="email">Email&nbsp;<span
-																					class="required">*</span></label><input
-																				id="email" name="email" type="email"
-																				value="" size="30" required /></p>
-																		<p class="comment-form-cookies-consent"><input
-																				id="wp-comment-cookies-consent"
-																				name="wp-comment-cookies-consent"
-																				type="checkbox" value="yes" /> <label
-																				for="wp-comment-cookies-consent">Lưu tên
-																				của tôi, email, và trang web trong trình
-																				duyệt này cho lần bình luận kế tiếp của
-																				tôi.</label></p>
-																		<p class="comment-form-img-message">Anh/Chị phải
-																			đăng nhập để có thể thêm ảnh vào bài đánh
-																			giá của mình.</p>
-																		<p class="form-submit"><input name="submit"
-																				type="submit" id="submit" class="submit"
-																				value="Gửi đi" /> <input type='hidden'
-																				name='comment_post_ID' value='26178'
-																				id='comment_post_ID' />
-																			<input type='hidden' name='comment_parent'
-																				id='comment_parent' value='0' />
-																		</p>
-																	</form>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="elementor-element elementor-element-bbd0cc0 elementor-widget elementor-widget-wd_button"
-												data-id="bbd0cc0" data-element_type="widget"
-												data-widget_type="wd_button.default">
-												<div class="elementor-widget-container">
-													<div class="wd-button-wrapper text-center wd-smooth-scroll"
-														data-smooth-time="100" data-smooth-offset="100">
-														<a class="btn btn-style-default btn-shape-semi-round btn-size-default btn-color-primary btn-icon-pos-right"
-															href="#mua-ngay">
-															<span class="wd-btn-text" data-elementor-setting-key="text">
-																MUA SẢN PHẨM ĐƯỢC NHIỀU KHÁCH HÀNG ĐÁNH GIÁ </span><span
-																class="wd-btn-icon">
-																<svg class="wd-icon e-font-icon-svg e-fas-check"
-																	viewBox="0 0 512 512"
-																	xmlns="http://www.w3.org/2000/svg">
-																	<path
-																		d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z">
-																	</path>
-																</svg> </span>
-														</a>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</section>
-							  
+							@if ($relatedProducts->count())
+						 
 							<section
 								class="wd-negative-gap elementor-section elementor-top-section elementor-element elementor-element-d70d624 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
 								data-id="d70d624" data-element_type="section">
@@ -1345,7 +775,7 @@
 												data-widget_type="heading.default">
 												<div class="elementor-widget-container">
 													<h2 class="elementor-heading-title elementor-size-default">SẢN PHẨM
-														ĐÃ XEM GẦN ĐÂY</h2>
+														TƯƠNG TỰ</h2>
 												</div>
 											</div>
 											<div class="elementor-element elementor-element-997c3ea wd-width-100 elementor-widget elementor-widget-wd_products"
@@ -1360,6 +790,7 @@
 																data-scroll_per_page="yes"
 																style="--wd-col-lg:5;--wd-col-md:4;--wd-col-sm:2;--wd-gap-lg:20px;--wd-gap-sm:10px;">
 																<div class="wd-carousel-wrap">
+																	@foreach ($relatedProducts as $product)
 																	<div class="wd-carousel-item">
 																		<div class="wd-product wd-with-labels wd-hover-fw-button wd-hover-with-fade wd-fade-off product-grid-item product type-product post-27660 status-publish instock product_cat-may-rua-chen-bat product_cat-may-rua-chen-bat-mini has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
 																			data-loop="1" data-id="27660">
@@ -1368,91 +799,69 @@
 																				</div>
 																				<div
 																					class="product-element-top wd-quick-shop">
-																					<a href="/assets/san-pham/may-rua-chen-bat-hafele-hdw-t5551b/"
+																					<a href="{{ route('product.detail', $product->slug) }}"
 																						class="product-image-link">
 																						<div
 																							class="wd-product-grid-slider wd-fill">
 																							<div class="wd-product-grid-slide"
-																								data-image-url="/assets/wp-content/uploads/2024/07/HDW-T5551B-768x768.jpg"
-																								data-image-srcset="/assets/wp-content/uploads/2024/07/HDW-T5551B-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-600x600.jpg 600w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B.jpg 900w"
+																								data-image-url="{{ asset('storage/' . $product->image) }}"
 																								data-image-id="0"></div>
-																							<div class="wd-product-grid-slide"
-																								data-image-url="/assets/wp-content/uploads/2024/07/HDW-T5551B-4-768x768.jpg"
-																								data-image-srcset="/assets/wp-content/uploads/2024/07/HDW-T5551B-4-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-4-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-4-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-4-600x600.jpg 600w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-4.jpg 900w"
-																								data-image-id="1"></div>
-																							<div class="wd-product-grid-slide"
-																								data-image-url="/assets/wp-content/uploads/2024/07/HDW-T5551B-2-768x768.jpg"
-																								data-image-srcset="/assets/wp-content/uploads/2024/07/HDW-T5551B-2-768x768.jpg 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-2-300x300.jpg 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-2-150x150.jpg 150w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-2-600x600.jpg 600w, https://shop.phanhoanggia.com/wp-content/uploads/2024/07/HDW-T5551B-2.jpg 900w"
-																								data-image-id="2"></div>
+																						 
 																						</div>
 																						<div
 																							class="wd-product-grid-slider-pagin">
 																							<div data-image-id="0"
 																								class="wd-product-grid-slider-dot">
 																							</div>
-																							<div data-image-id="1"
-																								class="wd-product-grid-slider-dot">
-																							</div>
-																							<div data-image-id="2"
-																								class="wd-product-grid-slider-dot">
-																							</div>
+																							 
 																						</div>
 																						<div
 																							class="product-labels labels-rounded-sm">
-																							<span
-																								class="onsale product-label">-17%</span>
+																							@php
+																							$discountPercent = 0;
+																							if ($product->original_price > 0 && $product->discounted_price > 0 && $product->original_price > $product->discounted_price) {
+																								$discountPercent = round(100 - ($product->discounted_price / $product->original_price * 100));
+																							}
+																						@endphp
+																						
+																						@if ($discountPercent > 0)
+																							<span class="onsale product-label">-{{ $discountPercent }}%</span>
+																						@endif
+																						
 																						</div><img loading="lazy"
 																							width="768" height="768"
-																							src="/assets/wp-content/uploads/2024/07/HDW-T5551B.jpg"
+																							src="{{ asset('storage/' . $product->image) }}"
 																							class="attachment-medium_large size-medium_large"
 																							alt="Máy rửa chén bát Hafele HDW-T5551B"
 																							decoding="async"
 																							sizes="(max-width: 768px) 100vw, 768px" />
 																					</a>
-																					<div class="wd-buttons wd-pos-r-t">
-																						<div
-																							class="wd-compare-btn product-compare-button wd-action-btn wd-style-icon wd-compare-icon">
-																							<a href="/assets/compare/?product_id=27660"
-																								data-id="27660"
-																								rel="nofollow"
-																								data-added-text="So sánh sản phẩm">
-																								<span>So sánh</span>
-																							</a>
-																						</div>
-																						<div
-																							class="quick-view wd-action-btn wd-style-icon wd-quick-view-icon">
-																							<a href="/assets/san-pham/may-rua-chen-bat-hafele-hdw-t5551b/"
-																								class="open-quick-view quick-view-button"
-																								rel="nofollow"
-																								data-id="27660">Quick
-																								view</a>
-																						</div>
-																					</div>
+																				 
 																				</div>
 																				<div class="product-element-bottom">
 																					<h3 class="wd-entities-title"><a
-																							href="/assets/san-pham/may-rua-chen-bat-hafele-hdw-t5551b/">Máy
+																							href="{{ route('product.detail', $product->slug) }}">Máy
 																							rửa chén bát Hafele
 																							HDW-T5551B</a></h3>
 																					<div class="wrap-price">
 																						<span class="price"><del
 																								aria-hidden="true"><span
-																									class="woocommerce-Price-amount amount"><bdi>16.690.000&nbsp;<span
+																									class="woocommerce-Price-amount amount"><bdi>{{ number_format($product->discounted_price, 0, ',', '.') }}&nbsp;<span
 																											class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></del>
 																							<span
 																								class="screen-reader-text">Giá
 																								gốc là:
-																								16.690.000&nbsp;&#8363;.</span><ins
+																								{{ number_format($product->original_price, 0, ',', '.') }}&nbsp;&#8363;.</span><ins
 																								aria-hidden="true"><span
-																									class="woocommerce-Price-amount amount"><bdi>13.904.000&nbsp;<span
+																									class="woocommerce-Price-amount amount"><bdi>{{ number_format($product->discounted_price, 0, ',', '.') }}&nbsp;<span
 																											class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></ins><span
 																								class="screen-reader-text">Giá
 																								hiện tại là:
-																								13.904.000&nbsp;&#8363;.</span></span>
+																								{{ number_format($product->discounted_price, 0, ',', '.') }}&nbsp;&#8363;.</span></span>
 																					</div>
 																					<div
 																						class="wd-add-btn wd-add-btn-replace">
-																						<a href="?add-to-cart=27660"
+																						<a href="{{ route('product.detail', $product->slug) }}"
 																							aria-describedby="woocommerce_loop_add_to_cart_link_describedby_27660"
 																							data-quantity="1"
 																							class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"
@@ -1533,7 +942,7 @@
 																			</div>
 																		</div>
 																	</div>
-															 
+																	@endforeach
 																</div>
 															</div>
 															<div class="wd-nav-arrows wd-pos-sep wd-hover-1 wd-icon-1">
@@ -1552,6 +961,7 @@
 									</div>
 								</div>
 							</section>
+							@endif
 						</div>
 					</div>
 				</div>
@@ -1867,38 +1277,7 @@ hidden-form			" action="/assets/tai-khoan/" style="display:none;">
 }</script>
 	<div class="zalo-chat-widget" data-oaid="54272506446218113" data-welcome-message="Phan Hoàng Gia xin chào Anh Chị"
 		data-autopopup="0" data-width="" data-height=""></div>
-	<div class="wd-toolbar wd-toolbar-label-show">
-		<div class="wd-header-mobile-nav whb-wd-header-mobile-nav mobile-style-icon wd-tools-element">
-			<a href="#" rel="nofollow">
-				<span class="wd-tools-icon"></span>
-				<span class="wd-toolbar-label">
-					Menu </span>
-			</a>
-		</div>
-		<div class="wd-toolbar-home wd-toolbar-item wd-tools-element">
-			<a href="https://shop.phanhoanggia.com">
-				<span class="wd-tools-icon"></span>
-				<span class="wd-toolbar-label">
-					Home </span>
-			</a>
-		</div>
-		<div class="wd-header-cart wd-tools-element wd-design-5 cart-widget-opener" title="My cart">
-			<a href="/assets/gio-hang/">
-				<span class="wd-tools-icon">
-					<span class="wd-cart-number wd-tools-count">0 <span>items</span></span>
-				</span>
-				<span class="wd-toolbar-label">
-					Cart </span>
-			</a>
-		</div>
-		<div class="wd-header-my-account wd-tools-element wd-style-icon  login-side-opener">
-			<a href="/assets/tai-khoan/">
-				<span class="wd-tools-icon"></span>
-				<span class="wd-toolbar-label">
-					My account </span>
-			</a>
-		</div>
-	</div>
+	 
  
 	<script type="text/template"
 		id="tmpl-unavailable-variation-template"><p role="alert">Rất tiếc, sản phẩm này hiện không tồn tại. Hãy chọn một phương thức kết hợp khác.</p></script>

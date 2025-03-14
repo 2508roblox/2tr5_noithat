@@ -17,10 +17,9 @@
                             <a href="{{route('home')}}" class="wd-logo wd-main-logo" rel="home"
                                 aria-label="Site logo">
                                 <img loading="lazy" width="2757" height="823"
-                                    src="/assets/wp-content/uploads/2024/11/logo-phg-ngang-2.png"
+                                    src="/assets/z6392965681312_241df786a820c4465cda82e2c093de83-removebg-preview.png"
                                     class="attachment-full size-full" alt="Logo Shop Phan Hoàng Gia"
                                     style="max-width:200px;" decoding="async"
-                                    srcset="/assets/wp-content/uploads/2024/11/logo-phg-ngang-2.png 2757w, https://shop.phanhoanggia.com/wp-content/uploads/2024/11/logo-phg-ngang-2-300x90.png 300w, https://shop.phanhoanggia.com/wp-content/uploads/2024/11/logo-phg-ngang-2-1024x306.png 1024w, https://shop.phanhoanggia.com/wp-content/uploads/2024/11/logo-phg-ngang-2-768x229.png 768w, https://shop.phanhoanggia.com/wp-content/uploads/2024/11/logo-phg-ngang-2-1536x459.png 1536w, https://shop.phanhoanggia.com/wp-content/uploads/2024/11/logo-phg-ngang-2-2048x611.png 2048w, https://shop.phanhoanggia.com/wp-content/uploads/2024/11/logo-phg-ngang-2-1200x358.png 1200w, https://shop.phanhoanggia.com/wp-content/uploads/2024/11/logo-phg-ngang-2-150x45.png 150w"
                                     sizes="(max-width: 2757px) 100vw, 2757px" /> </a>
                         </div>
                         <div class="wd-header-text reset-last-child "><span style="font-size: 8pt;">Từ năm 2017,
@@ -34,7 +33,7 @@
                             class="wd-search-form wd-header-search-form wd-display-form whb-1yjd6g8pvqgh79uo6oce">
                             <form role="search" method="get"
                                 class="searchform  wd-style-with-bg-2 wd-cat-style-bordered woodmart-ajax-search"
-                                action="https://shop.phanhoanggia.com/" data-thumbnail="1" data-price="1"
+                                action="{{ route('products') }}" data-thumbnail="1" data-price="1"
                                 data-post_type="product" data-count="20" data-sku="0" data-symbols_count="3">
                                 <input type="text" class="s" placeholder="Tìm kiếm sản phẩm" value="" name="s"
                                     aria-label="Search" title="Tìm kiếm sản phẩm" required />
@@ -79,8 +78,8 @@
                         <div class="whb-space-element " style="width:20px;"></div>
                         <div id="wd-67d16342002e7"
                             class=" whb-3w8r8fpjvfie3zsjlm1i wd-button-wrapper text-center"><a
-                                href="tel:0933427499" title="" style="--btn-color:#fff;--btn-color-hover:#fff;"
-                                class="btn btn-style-default btn-shape-round btn-size-small btn-icon-pos-left">0933.427.499<span
+                                href="tel:0936705589" title="" style="--btn-color:#fff;--btn-color-hover:#fff;"
+                                class="btn btn-style-default btn-shape-round btn-size-small btn-icon-pos-left">0936.705.589<span
                                     class="wd-btn-icon"><span class="wd-icon fa-phone"></span></span></a></div>
                     </div>
                     <div class="whb-column whb-mobile-left whb-hidden-lg">
@@ -88,6 +87,7 @@
                             class="wd-tools-element wd-header-mobile-nav wd-style-icon wd-design-1 whb-2pcq59rrgv7khz6hxoix">
                             <a href="#" rel="nofollow" aria-label="Open mobile menu">
                                 <span class="wd-tools-icon">
+                                    
                                 </span><span class="wd-tools-text">Menu</span></a>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
                             <a href="https://shop.phanhoanggia.com/" class="wd-logo wd-main-logo" rel="home"
                                 aria-label="Site logo">
                                 <img loading="lazy" width="200" height="34"
-                                    src="/assets/wp-content/uploads/2023/04/logo-phg.svg"
+                                    src="/assets/z6392965681312_241df786a820c4465cda82e2c093de83-removebg-preview.png"
                                     class="attachment-full size-full" alt="Shop Phan Hoàng Gia"
                                     style="max-width:180px;" decoding="async" /> </a>
                         </div>
@@ -124,6 +124,13 @@
                             <a href="{{ route('products' ) }}" aria-label="Open sticky navigation">
                                 <span class="wd-tools-inner">
                                     <span class="wd-tools-icon">
+                                        
+<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 18L20 18" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+<path d="M4 12L20 12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+<path d="M4 6L20 6" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+</svg>
                                     </span><span class="wd-tools-text">Tất cả sản phẩm</span></span>
                             </a>
                         </div>
@@ -464,4 +471,36 @@
      
     </ul>
 </div>
+
+<div class="wd-toolbar wd-toolbar-label-show">
+    <div class="wd-header-mobile-nav whb-wd-header-mobile-nav mobile-style-icon wd-tools-element">
+        <a href="#" rel="nofollow">
+            <span class="wd-tools-icon"></span>
+            <span class="wd-toolbar-label">Menu</span>
+        </a>
+    </div>
+    
+    <div class="wd-toolbar-home wd-toolbar-item wd-tools-element">
+        <a href="{{ route('home') }}">
+            <span class="wd-tools-icon"></span>
+            <span class="wd-toolbar-label">Home</span>
+        </a>
+    </div>
+
+    <div class="wd-header-cart wd-tools-element wd-design-5  " title="My cart">
+        <a href="{{ route('cart') }}">
+            <span class="wd-tools-icon">
+                <span class="wd-cart-number wd-tools-count">
+                    {{ $cartCount }} <span>items</span>
+                </span>
+            </span>
+            <span class="wd-toolbar-label">Cart</span>
+        </a>
+    </div>
+
+    <div class="wd-header-my-account wd-tools-element wd-style-icon login-side-opener">
+        <!-- Có thể thêm icon đăng nhập -->
+    </div>
+</div>
+
 </div>

@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <link data-optimized="2" rel="stylesheet"
-        href="/assets/wp-content/litespeed/css/6d10f4ab671deb913b5749b76e3b6df9.css?ver=d7d14" />
+  
+    
+    
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="pingback" href="">
     <title>Cửa Hàng Nội Thất | Thiết Bị Nhà Bếp | Thiết Bị Vệ Sinh | Shop Phan Hoàng Gia</title>
@@ -425,10 +426,8 @@
                                                                                                                         <div
                                                                                                                             class="wd-add-btn wd-add-btn-replace">
                                                                                                                             <a href="{{ route('product.detail', ['slug' => $product->slug]) }}"
-                                                                                                                                data-quantity="1"
-                                                                                                                                class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"
+                                                                                                                                class="button product_type_simple add_to_cart_button  "
                                                                                                                                 aria-label="Thêm vào giỏ hàng: &ldquo;Két sắt điện tử Samurai ME03 - Thép tấm siêu cường&rdquo;"
-                                                                                                                                rel="nofollow"
                                                                                                                                 data-success_message="&ldquo;Két sắt điện tử Samurai ME03 - Thép tấm siêu cường&rdquo; đã được thêm vào giỏ hàng của bạn"><span>Thêm
                                                                                                                                     vào
                                                                                                                                     giỏ
@@ -723,8 +722,8 @@
                                                                                     </span>
                                                                                 </div>
                                                                                 <div class="wd-add-btn wd-add-btn-replace">
-                                                                                    <a href="?add-to-cart={{ $product->id }}"
-                                                                                        class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop"
+                                                                                    <a href="{{ route('product.detail', ['slug' => $product->slug]) }}"
+                                                                                        class="button product_type_simple add_to_cart_button   add-to-cart-loop"
                                                                                         data-product_id="{{ $product->id }}"
                                                                                         data-quantity="1"
                                                                                         aria-label="Thêm vào giỏ hàng: &ldquo;{{ $product->name }}&rdquo;"
@@ -890,38 +889,7 @@ hidden-form			" action="/assets/tai-khoan/" style="display:none;">
     </script>
     <div class="zalo-chat-widget" data-oaid="54272506446218113" data-welcome-message="Phan Hoàng Gia xin chào Anh Chị"
         data-autopopup="0" data-width="" data-height=""></div>
-    <div class="wd-toolbar wd-toolbar-label-show">
-        <div class="wd-header-mobile-nav whb-wd-header-mobile-nav mobile-style-icon wd-tools-element">
-            <a href="#" rel="nofollow">
-                <span class="wd-tools-icon"></span>
-                <span class="wd-toolbar-label">
-                    Menu </span>
-            </a>
-        </div>
-        <div class="wd-toolbar-home wd-toolbar-item wd-tools-element">
-            <a href="https://shop.phanhoanggia.com">
-                <span class="wd-tools-icon"></span>
-                <span class="wd-toolbar-label">
-                    Home </span>
-            </a>
-        </div>
-        <div class="wd-header-cart wd-tools-element wd-design-5 cart-widget-opener" title="My cart">
-            <a href="/assets/gio-hang/">
-                <span class="wd-tools-icon">
-                    <span class="wd-cart-number wd-tools-count">0 <span>items</span></span>
-                </span>
-                <span class="wd-toolbar-label">
-                    Cart </span>
-            </a>
-        </div>
-        <div class="wd-header-my-account wd-tools-element wd-style-icon  login-side-opener">
-            <a href="/assets/tai-khoan/">
-                <span class="wd-tools-icon"></span>
-                <span class="wd-toolbar-label">
-                    My account </span>
-            </a>
-        </div>
-    </div>
+  
    
     <script type="text/template" id="tmpl-unavailable-variation-template">
         <p role="alert">Rất tiếc, sản phẩm này hiện không tồn tại. Hãy chọn một phương thức kết hợp khác.</p>
@@ -1369,9 +1337,9 @@ hidden-form			" action="/assets/tai-khoan/" style="display:none;">
             e.addEventListener ? e.addEventListener("load", n, !1) : e.attachEvent("onload", n)
         }(window, document);
     </script>
-    <script data-optimized="1"
+    <script  
         src="/assets/wp-content/litespeed/js/a44c1734acaa688e2813b1bb6b6b10fe.js?ver=d7d14"
-        defer></script>
+         ></script>
 </body>
 
 </html>

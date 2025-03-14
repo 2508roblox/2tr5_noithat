@@ -191,7 +191,7 @@
                                         <div class="wd-image text-center">
                                             <a href="https://shop.phanhoanggia.com/" aria-label="Image link">
                                                 <img alt="Shop Phan Hoàng Gia"
-                                                    src="/assets/wp-content/uploads/2023/04/logo-phg.svg"
+                                                    src="/assets/z6392965681312_241df786a820c4465cda82e2c093de83-removebg-preview.png"
                                                     title="Shop Phan Hoàng Gia" loading="lazy" width="300"
                                                     height="300"> </a>
                                         </div>
@@ -205,53 +205,23 @@
                                             <div
                                                 class="wd-info-box text-center box-icon-align-right box-style-base color-scheme- wd-items-top">
                                                 <div class="info-box-content">
-                                                    <h2 class="info-box-title title box-title-style-default wd-fontsize-m"
-                                                        data-elementor-setting-key="title">
-                                                        CÔNG TY TNHH MTV TRANG TRÍ NỘI THẤT PHAN HOÀNG GIA</h2>
-                                                    <div class="info-box-inner reset-last-child"
-                                                        data-elementor-setting-key="content">
-                                                        <p><strong>Địa chỉ VP</strong>: Lô 55-57, Đường D2, KDC Phúc
-                                                            Đạt, Phú Lợi, Thủ Dầu Một, Bình Dương.</p>
-                                                        <p><strong>Xưởng sản xuất</strong>: Đường 152, Ấp 6B, Bình
-                                                            Mỹ, Củ Chi, TP. HCM.</p>
-                                                        <p><strong>Hệ thống showroom:</strong></p>
-                                                        <p><strong>Bình Dương:</strong> 357 Đại Lộ Bình Dương, Phú
-                                                            Thọ, Thủ Dầu Một, Bình Dương</p>
-                                                        <p><strong>Vũng Tàu</strong>: 373 Đường Thống Nhất Mới,
-                                                            Phường 8, TP. Vũng Tàu</p>
-                                                        <p><strong>Bình Phước:</strong> 336 Phú Riềng Đỏ, Tân Bình,
-                                                            TP. Đồng Xoài, Bình Phước</p>
-                                                        <p><strong>Long An:</strong> 178 Quốc lộ 62, TP. Tân An,
-                                                            Long An</p>
-                                                        <p><strong>MST</strong>: 3702020228 | <strong>Ngày
-                                                                cấp</strong>: 26/03/2012 | <strong>Nới cấp</strong>:
-                                                            Sở kế hoạch và đầu tư tỉnh Bình Dương</p>
-                                                        <p style="text-align: center;"><strong>Website:</strong> <a
-                                                                href="https://phanhoanggia.com/">https://phanhoanggia.com/</a>
+                                                    <h2 class="info-box-title title box-title-style-default wd-fontsize-m" data-elementor-setting-key="title">
+                                                        CÔNG TY TNHH NỘI THẤT CG HOME
+                                                    </h2>
+                                                    <div class="info-box-inner reset-last-child" data-elementor-setting-key="content">
+                                                        <p><strong>Cơ sở:</strong> 280 Lô 22 Lê Hồng Phong, Hải Phòng</p>
+                                                        <p><strong>Hotline:</strong> <a href="tel:0936705589">0936.705.589</a></p>
+                                                        <p><strong>Website:</strong> <a href="https://phanhoanggia.com/">https://phanhoanggia.com/</a></p>
+                                                        <p style="text-align: center;">
+                                                            <strong>Google Map:</strong>
+                                                            <a href="https://maps.app.goo.gl/xQ5ypWicrERXdHiq7" target="_blank" rel="noopener">Xem trên Google Maps</a>
                                                         </p>
-                                                        <p><strong>Shop:</strong> <a
-                                                                href="https://shop.phanhoanggia.com/">/assets/</a>
-                                                        </p>
-                                                        <p style="text-align: center;"><strong>Hotline:</strong> <a
-                                                                href="tel:0933426399">0933.426.399</a> - <a
-                                                                href="tel:0933427499">0933.427.499</a></p>
-                                                        <p style="text-align: center;"><strong>Email: </strong><a
-                                                                href="mailto:phg@phanhoanggia.com">phg@phanhoanggia.com</a>
-                                                        </p>
-                                                        <p style="text-align: center;"><strong>Google
-                                                                Map:</strong><a
-                                                                href="https://maps.app.goo.gl/YXQV7BDhAMioFWSW7"
-                                                                target="_blank" rel="noopener"> Đường đến Phan Hoàng
-                                                                Gia.</a></p>
-                                                        <p style="text-align: center;"><strong>Google Map:</strong>
-                                                            <a href="https://maps.app.goo.gl/vttCEBtwdpD1TWEq6"
-                                                                target="_blank" rel="noopener">Đường đến
-                                                                Showroom.</a></p>
                                                         <p>
                                                             <a class="dmca-badge" title="DMCA.com Protection Status"
                                                                 href="//www.dmca.com/Protection/Status.aspx?ID=8cc52183-43d2-4f4f-97b1-09074b8633c9">
                                                                 <img src="https://images.dmca.com/Badges/dmca-badge-w100-5x1-11.png?ID=8cc52183-43d2-4f4f-97b1-09074b8633c9"
-                                                                    alt="DMCA.com Protection Status" /></a>
+                                                                    alt="DMCA.com Protection Status" />
+                                                            </a>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -323,11 +293,11 @@
         <div class="wd-copyrights copyrights-wrapper wd-layout-two-columns">
             <div class="container wd-grid-g">
                 <div class="wd-col-start reset-last-child">
-                    <small><a href="https://shop.phanhoanggia.com/"><strong>SHOP PHAN HOÀNG GIA</strong></a> <i
+                    <small><a href="https://shop.phanhoanggia.com/"><strong>CG Home</strong></a> <i
                             class="fa fa-copyright"></i> Bản quyền thuộc <a
-                            href="https://phanhoanggia.com/"><strong>PHAN HOÀNG GIA</strong></a>.</a> <i
+                            href="https://phanhoanggia.com/"><strong>CG Home</strong></a>.</a> <i
                             class="fa fa-copyright"></i> Thiết kế bởi <a
-                            href="https://92digi.com/"><strong>92DIGI</strong></a></small>
+                            href="https://92digi.com/"><strong>HG DIGITAL</strong></a></small>
                 </div>
                 <div class="wd-col-end reset-last-child">
                     <img src="/assets/wp-content/themes/woodmart/images/payments.png"

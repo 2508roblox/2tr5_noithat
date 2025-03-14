@@ -119,7 +119,7 @@
 											<div class="elementor-widget-container">
 												<p class="woocommerce-result-count" role="alert" aria-relevant="all"
 													data-is-sorted-by="true">
-													Hiển thị 1&ndash;12 của 2326 kết quả<span
+													Hiển thị {{ $products->firstItem() }}&ndash;{{ $products->lastItem() }} của {{ $products->total() }} kết quả <span
 														class="screen-reader-text">Được sắp xếp theo mới nhất</span></p>
 											</div>
 										</div>
@@ -420,7 +420,7 @@
                                                                     </a>
                                                                 </div>
                                                                 <div class="product-element-bottom">
-                                                                    <h3 class="wd-entities-title"><a href="{{ $product->url }}">{{ $product->name }}</a></h3>
+                                                                    <h3 class="wd-entities-title"><a href="{{ route('product.detail', ['slug' => $product->slug]) }}">{{ $product->name }}</a></h3>
                                                                     <div class="wrap-price">
                                                                         <span class="price">
                                                                             <del><bdi>{{ number_format($product->original_price, 0, ',', '.') }}&#8363;</bdi></del>
@@ -428,7 +428,7 @@
                                                                         </span>
                                                                     </div>
                                                                     <div class="wd-add-btn wd-add-btn-replace">
-                                                                        <a href="{{ route('product.detail', ['slug' => $product->slug]) }}" class="button product_type_simple add_to_cart_button ajax_add_to_cart add-to-cart-loop" data-product_id="{{ $product->id }}" rel="nofollow">
+                                                                        <a href="{{ route('product.detail', ['slug' => $product->slug]) }}" class="button product_type_simple add_to_cart_button  " data-product_id="{{ $product->id }}" rel="nofollow">
                                                                             <span>Thêm vào giỏ hàng</span>
                                                                         </a>
                                                                     </div>
@@ -795,38 +795,7 @@ hidden-form			" action="/assets/tai-khoan/" style="display:none;">
 }</script>
 	<div class="zalo-chat-widget" data-oaid="54272506446218113" data-welcome-message="Phan Hoàng Gia xin chào Anh Chị"
 		data-autopopup="0" data-width="" data-height=""></div>
-	<div class="wd-toolbar wd-toolbar-label-show">
-		<div class="wd-header-mobile-nav whb-wd-header-mobile-nav mobile-style-icon wd-tools-element">
-			<a href="#" rel="nofollow">
-				<span class="wd-tools-icon"></span>
-				<span class="wd-toolbar-label">
-					Menu </span>
-			</a>
-		</div>
-		<div class="wd-toolbar-home wd-toolbar-item wd-tools-element">
-			<a href="https://shop.phanhoanggia.com">
-				<span class="wd-tools-icon"></span>
-				<span class="wd-toolbar-label">
-					Home </span>
-			</a>
-		</div>
-		<div class="wd-header-cart wd-tools-element wd-design-5 cart-widget-opener" title="My cart">
-			<a href="/assets/gio-hang/">
-				<span class="wd-tools-icon">
-					<span class="wd-cart-number wd-tools-count">0 <span>items</span></span>
-				</span>
-				<span class="wd-toolbar-label">
-					Cart </span>
-			</a>
-		</div>
-		<div class="wd-header-my-account wd-tools-element wd-style-icon  login-side-opener">
-			<a href="/assets/tai-khoan/">
-				<span class="wd-tools-icon"></span>
-				<span class="wd-toolbar-label">
-					My account </span>
-			</a>
-		</div>
-	</div>
+ 
 	 
  
 	<script type="text/template"

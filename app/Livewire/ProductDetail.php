@@ -7,11 +7,13 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\SubCategory;
 use App\Models\ChildSubCategory;
+use Illuminate\Support\Facades\Session;
 
 class ProductDetail extends Component
 {
     public $product;
     public $relatedProducts;
+    public $quantity = 1;
 
     public function mount($slug)
     {
@@ -27,7 +29,29 @@ class ProductDetail extends Component
             ->take(6)
             ->get();
     }
-
+    public function addToCart()
+    {
+        $cart = Session::get('cart', []);
+    
+        if (isset($cart[$this->product->id])) {
+            $cart[$this->product->id]['quantity'] += $this->quantity;
+        } else {
+            $cart[$this->product->id] = [
+                'id' => $this->product->id,
+                'name' => $this->product->name,
+                'price' => $this->product->discounted_price ?? $this->product->original_price,
+                'image' => $this->product->image,
+                'quantity' => $this->quantity,
+            ];
+        }
+    
+        Session::put('cart', $cart);
+    
+        session()->flash('success', 'Đã thêm vào giỏ hàng!');
+        
+        return redirect()->route('cart'); // Chuyển hướng đến trang giỏ hàng
+    }
+    
     public function render()
     {
         return view('livewire.product-detail', [

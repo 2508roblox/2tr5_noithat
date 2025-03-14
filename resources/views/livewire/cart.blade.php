@@ -1201,7 +1201,9 @@
                                                         <form class="woocommerce-cart-form" action="/assets/gio-hang/"
                                                             method="post">
 
-
+                                                            @if(empty($cart))
+                                                            <p>Giỏ hàng trống!</p>
+                                                        @else
                                                             <table
                                                                 class="shop_table shop_table_responsive shop-table-with-img cart woocommerce-cart-form__contents">
                                                                 <thead>
@@ -1216,12 +1218,12 @@
                                                                 </thead>
                                                                 <tbody>
 
-
+                                                                    @foreach($cart as $productId => $item)
                                                                     <tr
                                                                         class="woocommerce-cart-form__cart-item cart_item">
 
                                                                         <td class="product-remove">
-                                                                            <a href="/assets/gio-hang/?remove_item=7cefdcbff0ddf29c3bbaeec362015c30&#038;_wpnonce=d0185fcbfe"
+                                                                            <a   wire:click="removeFromCart({{ $productId }})"
                                                                                 class="remove"
                                                                                 aria-label="Xóa Giá gia vị Edel BK01.350A khỏi giỏ hàng"
                                                                                 data-product_id="27871"
@@ -1233,7 +1235,7 @@
                                                                                 href="/assets/san-pham/gia-gia-vi-edel-bk01350a/"><img
                                                                                     loading="lazy" width="600"
                                                                                     height="600"
-                                                                                    src="/assets/wp-content/uploads/2024/08/BK01.200A-2.jpg"
+                                                                                    src="{{ asset('storage/' . $item['image']) }}"
                                                                                     class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
                                                                                     alt="Giá gia vị Edel BK01.200A"
                                                                                     decoding="async"
@@ -1242,14 +1244,13 @@
 
                                                                         <td class="product-name" data-title="Sản phẩm">
                                                                             <a
-                                                                                href="/assets/san-pham/gia-gia-vi-edel-bk01350a/">Giá
-                                                                                gia vị Edel BK01.350A</a>
+                                                                                href="/assets/san-pham/gia-gia-vi-edel-bk01350a/">{{ $item['name'] }}</a>
                                                                         </td>
 
 
                                                                         <td class="product-price" data-title="Giá">
                                                                             <span
-                                                                                class="woocommerce-Price-amount amount"><bdi>3.430.000&nbsp;<span
+                                                                                class="woocommerce-Price-amount amount"><bdi>{{ number_format($item['price'], 0, ',', '.') }}&nbsp;<span
                                                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                                         </td>
 
@@ -1259,15 +1260,14 @@
                                                                             <div class="quantity">
 
                                                                                 <input type="button" value="-"
-                                                                                    class="minus btn" />
+                                                                                wire:click="decreaseQuantity({{ $productId }})"   class="minus btn" />
 
                                                                                 <label class="screen-reader-text"
-                                                                                    for="quantity_67d164458a295">Giá gia
-                                                                                    vị Edel BK01.350A số lượng</label>
+                                                                                    for="quantity_67d164458a295">{{ $item['name'] }} số lượng</label>
                                                                                 <input type="number"
                                                                                     id="quantity_67d164458a295"
                                                                                     class="input-text qty text"
-                                                                                    value="1"
+                                                                                    value="{{ $item['quantity'] }}"
                                                                                     aria-label="Số lượng sản phẩm"
                                                                                     min="0" max=""
                                                                                     name="cart[7cefdcbff0ddf29c3bbaeec362015c30][qty]"
@@ -1275,7 +1275,7 @@
                                                                                     inputmode="numeric"
                                                                                     autocomplete="off">
 
-                                                                                <input type="button" value="+"
+                                                                                <input wire:click="increaseQuantity({{ $productId }})" type="button" value="+"
                                                                                     class="plus btn" />
 
                                                                             </div>
@@ -1284,55 +1284,25 @@
                                                                         <td class="product-subtotal"
                                                                             data-title="Tạm tính">
                                                                             <span
-                                                                                class="woocommerce-Price-amount amount"><bdi>3.430.000&nbsp;<span
+                                                                                class="woocommerce-Price-amount amount"><bdi>{{ number_format($item['price'] * $item['quantity'], 0, ',', '.') }}&nbsp;<span
                                                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                                         </td>
                                                                     </tr>
 
 
-                                                                    <tr class="wd-cart-action-row">
-                                                                        <td colspan="12" class="actions">
-                                                                            <div class="cart-actions">
-                                                                                <div class="coupon wd-coupon-form">
-                                                                                    <label for="coupon_code"
-                                                                                        class="screen-reader-text">
-                                                                                        Ưu đãi: </label>
-                                                                                    <input type="text"
-                                                                                        name="coupon_code"
-                                                                                        class="input-text"
-                                                                                        id="coupon_code" value=""
-                                                                                        placeholder="Mã ưu đãi" />
-                                                                                    <button type="submit" class="button"
-                                                                                        name="apply_coupon"
-                                                                                        value="Áp dụng">
-                                                                                        Áp dụng </button>
-                                                                                </div>
-
-                                                                                <button type="submit"
-                                                                                    class="button  wd-hide"
-                                                                                    name="update_cart"
-                                                                                    value="Cập nhật giỏ hàng">
-                                                                                    Cập nhật giỏ hàng </button>
-
-
-                                                                                <input type="hidden"
-                                                                                    id="woocommerce-cart-nonce"
-                                                                                    name="woocommerce-cart-nonce"
-                                                                                    value="d0185fcbfe" /><input
-                                                                                    type="hidden"
-                                                                                    name="_wp_http_referer"
-                                                                                    value="/gio-hang/" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-
+                                                                   
+                                                                    @endforeach
                                                                 </tbody>
                                                             </table>
-
+                                                            @endif
                                                         </form>
                                                     </div>
                                                 </div>
                                             </div>
+                                            
+                                        </div>
+                                        <div>
+                                            
                                         </div>
                                         <div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-1e4837f"
                                             data-id="1e4837f" data-element_type="column">
@@ -1379,467 +1349,14 @@
                                                                                     <tr class="cart-subtotal">
                                                                                         <th>Tạm tính</th>
                                                                                         <td data-title="Tạm tính"><span
-                                                                                                class="woocommerce-Price-amount amount"><bdi>3.430.000&nbsp;<span
+                                                                                                class="woocommerce-Price-amount amount"><bdi>{{ number_format($total, 0, ',', '.') }}&nbsp;<span
                                                                                                         class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span>
                                                                                         </td>
                                                                                     </tr>
 
 
 
-
-                                                                                    <tr
-                                                                                        class="woocommerce-shipping-totals shipping">
-                                                                                        <th>Giao hàng</th>
-                                                                                        <td data-title="Giao hàng">
-                                                                                            <ul id="shipping_method"
-                                                                                                class="woocommerce-shipping-methods">
-                                                                                                <li>
-                                                                                                    <input type="hidden"
-                                                                                                        name="shipping_method[0]"
-                                                                                                        data-index="0"
-                                                                                                        id="shipping_method_0_devvn_district_zone_shipping_3"
-                                                                                                        value="devvn_district_zone_shipping_3"
-                                                                                                        class="shipping_method" /><label
-                                                                                                        for="shipping_method_0_devvn_district_zone_shipping_3">Miễn
-                                                                                                        phí vận
-                                                                                                        chuyển</label>
-                                                                                                </li>
-                                                                                            </ul>
-                                                                                            <p
-                                                                                                class="woocommerce-shipping-destination">
-                                                                                                Vận chuyển đến
-                                                                                                <strong>Bình
-                                                                                                    Dương</strong>. </p>
-
-
-
-                                                                                            <form
-                                                                                                class="woocommerce-shipping-calculator"
-                                                                                                action="/assets/gio-hang/"
-                                                                                                method="post">
-
-                                                                                                <a href="#"
-                                                                                                    class="shipping-calculator-button"
-                                                                                                    aria-expanded="false"
-                                                                                                    aria-controls="shipping-calculator-form"
-                                                                                                    role="button">Đổi
-                                                                                                    địa chỉ</a>
-                                                                                                <section
-                                                                                                    class="shipping-calculator-form"
-                                                                                                    id="shipping-calculator-form"
-                                                                                                    style="display:none;">
-
-                                                                                                    <p class="form-row form-row-wide"
-                                                                                                        id="calc_shipping_country_field">
-                                                                                                        <label
-                                                                                                            for="calc_shipping_country"
-                                                                                                            class="screen-reader-text">Quốc
-                                                                                                            gia / Khu
-                                                                                                            vực:</label>
-                                                                                                        <select
-                                                                                                            name="calc_shipping_country"
-                                                                                                            id="calc_shipping_country"
-                                                                                                            class="country_to_state country_select"
-                                                                                                            rel="calc_shipping_state">
-                                                                                                            <option
-                                                                                                                value="default">
-                                                                                                                Chọn
-                                                                                                                Quốc
-                                                                                                                gia/Khu
-                                                                                                                vực&hellip;
-                                                                                                            </option>
-                                                                                                            <option
-                                                                                                                value="VN"
-                                                                                                                selected='selected'>
-                                                                                                                Việt Nam
-                                                                                                            </option>
-                                                                                                        </select>
-                                                                                                    </p>
-
-                                                                                                    <p class="form-row form-row-wide"
-                                                                                                        id="calc_shipping_state_field">
-                                                                                                        <span>
-                                                                                                            <label
-                                                                                                                for="calc_shipping_state"
-                                                                                                                class="screen-reader-text">Tiểu
-                                                                                                                bang /
-                                                                                                                Quận:</label>
-                                                                                                            <select
-                                                                                                                name="calc_shipping_state"
-                                                                                                                class="state_select"
-                                                                                                                id="calc_shipping_state"
-                                                                                                                data-placeholder="Tiểu bang / Quận">
-                                                                                                                <option
-                                                                                                                    value="">
-                                                                                                                    Chọn
-                                                                                                                    một
-                                                                                                                    tùy
-                                                                                                                    chọn&hellip;
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HANOI">
-                                                                                                                    Hà
-                                                                                                                    Nội
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HOCHIMINH">
-                                                                                                                    Tp.
-                                                                                                                    Hồ
-                                                                                                                    Chí
-                                                                                                                    Minh
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="ANGIANG">
-                                                                                                                    An
-                                                                                                                    Giang
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BACGIANG">
-                                                                                                                    Bắc
-                                                                                                                    Giang
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BACKAN">
-                                                                                                                    Bắc
-                                                                                                                    Kạn
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BACLIEU">
-                                                                                                                    Bạc
-                                                                                                                    Liêu
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BACNINH">
-                                                                                                                    Bắc
-                                                                                                                    Ninh
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BARIAVUNGTAU">
-                                                                                                                    Bà
-                                                                                                                    Rịa
-                                                                                                                    -
-                                                                                                                    Vũng
-                                                                                                                    Tàu
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BENTRE">
-                                                                                                                    Bến
-                                                                                                                    Tre
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BINHDINH">
-                                                                                                                    Bình
-                                                                                                                    Định
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BINHDUONG"
-                                                                                                                    selected='selected'>
-                                                                                                                    Bình
-                                                                                                                    Dương
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BINHPHUOC">
-                                                                                                                    Bình
-                                                                                                                    Phước
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="BINHTHUAN">
-                                                                                                                    Bình
-                                                                                                                    Thuận
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="CAMAU">
-                                                                                                                    Cà
-                                                                                                                    Mau
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="CANTHO">
-                                                                                                                    Cần
-                                                                                                                    Thơ
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="CAOBANG">
-                                                                                                                    Cao
-                                                                                                                    Bằng
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="DAKLAK">
-                                                                                                                    Đắk
-                                                                                                                    Lắk
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="DAKNONG">
-                                                                                                                    Đắk
-                                                                                                                    Nông
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="DANANG">
-                                                                                                                    Đà
-                                                                                                                    Nẵng
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="DIENBIEN">
-                                                                                                                    Điện
-                                                                                                                    Biên
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="DONGNAI">
-                                                                                                                    Đồng
-                                                                                                                    Nai
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="DONGTHAP">
-                                                                                                                    Đồng
-                                                                                                                    Tháp
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="GIALAI">
-                                                                                                                    Gia
-                                                                                                                    Lai
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HAGIANG">
-                                                                                                                    Hà
-                                                                                                                    Giang
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HAIDUONG">
-                                                                                                                    Hải
-                                                                                                                    Dương
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HAIPHONG">
-                                                                                                                    Hải
-                                                                                                                    Phòng
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HANAM">
-                                                                                                                    Hà
-                                                                                                                    Nam
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HATINH">
-                                                                                                                    Hà
-                                                                                                                    Tĩnh
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HAUGIANG">
-                                                                                                                    Hậu
-                                                                                                                    Giang
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HOABINH">
-                                                                                                                    Hòa
-                                                                                                                    Bình
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="HUNGYEN">
-                                                                                                                    Hưng
-                                                                                                                    Yên
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="KHANHHOA">
-                                                                                                                    Khánh
-                                                                                                                    Hòa
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="KIENGIANG">
-                                                                                                                    Kiên
-                                                                                                                    Giang
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="KONTUM">
-                                                                                                                    Kon
-                                                                                                                    Tum
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="LAICHAU">
-                                                                                                                    Lai
-                                                                                                                    Châu
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="LAMDONG">
-                                                                                                                    Lâm
-                                                                                                                    Đồng
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="LANGSON">
-                                                                                                                    Lạng
-                                                                                                                    Sơn
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="LAOCAI">
-                                                                                                                    Lào
-                                                                                                                    Cai
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="LONGAN">
-                                                                                                                    Long
-                                                                                                                    An
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="NAMDINH">
-                                                                                                                    Nam
-                                                                                                                    Định
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="NGHEAN">
-                                                                                                                    Nghệ
-                                                                                                                    An
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="NINHBINH">
-                                                                                                                    Ninh
-                                                                                                                    Bình
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="NINHTHUAN">
-                                                                                                                    Ninh
-                                                                                                                    Thuận
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="PHUTHO">
-                                                                                                                    Phú
-                                                                                                                    Thọ
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="PHUYEN">
-                                                                                                                    Phú
-                                                                                                                    Yên
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="QUANGBINH">
-                                                                                                                    Quảng
-                                                                                                                    Bình
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="QUANGNAM">
-                                                                                                                    Quảng
-                                                                                                                    Nam
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="QUANGNGAI">
-                                                                                                                    Quảng
-                                                                                                                    Ngãi
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="QUANGNINH">
-                                                                                                                    Quảng
-                                                                                                                    Ninh
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="QUANGTRI">
-                                                                                                                    Quảng
-                                                                                                                    Trị
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="SOCTRANG">
-                                                                                                                    Sóc
-                                                                                                                    Trăng
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="SONLA">
-                                                                                                                    Sơn
-                                                                                                                    La
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="TAYNINH">
-                                                                                                                    Tây
-                                                                                                                    Ninh
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="THAIBINH">
-                                                                                                                    Thái
-                                                                                                                    Bình
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="THAINGUYEN">
-                                                                                                                    Thái
-                                                                                                                    Nguyên
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="THANHHOA">
-                                                                                                                    Thanh
-                                                                                                                    Hóa
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="THUATHIENHUE">
-                                                                                                                    Thừa
-                                                                                                                    Thiên
-                                                                                                                    Huế
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="TIENGIANG">
-                                                                                                                    Tiền
-                                                                                                                    Giang
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="TRAVINH">
-                                                                                                                    Trà
-                                                                                                                    Vinh
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="TUYENQUANG">
-                                                                                                                    Tuyên
-                                                                                                                    Quang
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="VINHLONG">
-                                                                                                                    Vĩnh
-                                                                                                                    Long
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="VINHPHUC">
-                                                                                                                    Vĩnh
-                                                                                                                    Phúc
-                                                                                                                </option>
-                                                                                                                <option
-                                                                                                                    value="YENBAI">
-                                                                                                                    Yên
-                                                                                                                    Bái
-                                                                                                                </option>
-                                                                                                            </select>
-                                                                                                        </span>
-                                                                                                    </p>
-
-                                                                                                    <p class="form-row form-row-wide"
-                                                                                                        id="calc_shipping_city_field">
-                                                                                                        <label
-                                                                                                            for="calc_shipping_city"
-                                                                                                            class="screen-reader-text">Thành
-                                                                                                            phố:</label>
-                                                                                                        <input
-                                                                                                            type="text"
-                                                                                                            class="input-text"
-                                                                                                            value=""
-                                                                                                            placeholder="Thành phố"
-                                                                                                            name="calc_shipping_city"
-                                                                                                            id="calc_shipping_city" />
-                                                                                                    </p>
-
-
-                                                                                                    <p><button
-                                                                                                            type="submit"
-                                                                                                            name="calc_shipping"
-                                                                                                            value="1"
-                                                                                                            class="button">Cập
-                                                                                                            nhật</button>
-                                                                                                    </p>
-                                                                                                    <input type="hidden"
-                                                                                                        id="woocommerce-shipping-calculator-nonce"
-                                                                                                        name="woocommerce-shipping-calculator-nonce"
-                                                                                                        value="9fc49dc52f" /><input
-                                                                                                        type="hidden"
-                                                                                                        name="_wp_http_referer"
-                                                                                                        value="/gio-hang/" />
-                                                                                                </section>
-                                                                                            </form>
-
-                                                                                        </td>
-                                                                                    </tr>
-
-
-
+ 
 
 
 
@@ -1847,7 +1364,7 @@
                                                                                         <th>Tổng</th>
                                                                                         <td data-title="Tổng">
                                                                                             <strong><span
-                                                                                                    class="woocommerce-Price-amount amount"><bdi>3.430.000&nbsp;<span
+                                                                                                    class="woocommerce-Price-amount amount"><bdi>{{ number_format($total, 0, ',', '.') }}&nbsp;<span
                                                                                                             class="woocommerce-Price-currencySymbol">&#8363;</span></bdi></span></strong>
                                                                                         </td>
                                                                                     </tr>
@@ -1870,185 +1387,73 @@
                                                         </div>
                                                     </div>
                                                 </section>
-                                                <section
-                                                    class="wd-negative-gap elementor-section elementor-inner-section elementor-element elementor-element-662a872 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                                    data-id="662a872" data-element_type="section"
-                                                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                                                    <div class="elementor-container elementor-column-gap-default">
-                                                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-5e868f7"
-                                                            data-id="5e868f7" data-element_type="column">
-                                                            <div
-                                                                class="elementor-widget-wrap elementor-element-populated">
-                                                                <div class="elementor-element elementor-element-096f446 elementor-widget__width-auto wd-width-100 elementor-widget elementor-widget-wd_title"
-                                                                    data-id="096f446" data-element_type="widget"
-                                                                    data-widget_type="wd_title.default">
-                                                                    <div class="elementor-widget-container">
-                                                                        <div
-                                                                            class="title-wrapper wd-set-mb reset-last-child wd-title-color-default wd-title-style-default wd-title-size-default text-left">
-
-
-                                                                            <div class="liner-continer">
-                                                                                <h4
-                                                                                    class="woodmart-title-container title wd-fontsize-l">
-                                                                                    Delivery &amp; Return</h4>
-                                                                            </div>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="elementor-element elementor-element-59f433d elementor-widget elementor-widget-wd_accordion"
-                                                                    data-id="59f433d" data-element_type="widget"
-                                                                    data-widget_type="wd_accordion.default">
-                                                                    <div class="elementor-widget-container">
-
-                                                                        <div class="wd-accordion wd-style-default wd-border-off wd-titles-left wd-opener-pos-right wd-opener-style-arrow"
-                                                                            data-state="first">
-
-                                                                            <div class="wd-accordion-item">
-                                                                                <div class="wd-accordion-title wd-active"
-                                                                                    data-accordion-index="0">
-                                                                                    <div
-                                                                                        class="wd-accordion-title-text">
-                                                                                        <span>
-                                                                                            My order hasn&#039;t arrived
-                                                                                            yet. Where is it? </span>
-                                                                                    </div>
-                                                                                    <span
-                                                                                        class="wd-accordion-opener"></span>
-                                                                                </div>
-
-                                                                                <div class="wd-accordion-content wd-entry-content wd-active"
-                                                                                    data-accordion-index="0">
-
-                                                                                    <p>How can you evaluate content
-                                                                                        without design? No typography,
-                                                                                        no colors, no layout, no styles,
-                                                                                        all those things that convey the
-                                                                                        important signals that go beyond
-                                                                                        the mere textual, hierarchies of
-                                                                                        information, weight.</p>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="wd-accordion-item">
-                                                                                <div class="wd-accordion-title"
-                                                                                    data-accordion-index="1">
-                                                                                    <div
-                                                                                        class="wd-accordion-title-text">
-                                                                                        <span>
-                                                                                            Do you deliver on public
-                                                                                            holidays? </span>
-                                                                                    </div>
-                                                                                    <span
-                                                                                        class="wd-accordion-opener"></span>
-                                                                                </div>
-
-                                                                                <div class="wd-accordion-content wd-entry-content"
-                                                                                    data-accordion-index="1">
-
-                                                                                    <p>To short sentences, to many
-                                                                                        headings, images too large for
-                                                                                        the proposed design, or too
-                                                                                        small, or they fit in but it
-                                                                                        looks iffy for reasons the folks
-                                                                                        in the meeting can’t quite tell
-                                                                                        right now, but they’re unhappy,
-                                                                                        somehow.</p>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="wd-accordion-item">
-                                                                                <div class="wd-accordion-title"
-                                                                                    data-accordion-index="2">
-                                                                                    <div
-                                                                                        class="wd-accordion-title-text">
-                                                                                        <span>
-                                                                                            Do you deliver to my
-                                                                                            postcode? </span>
-                                                                                    </div>
-                                                                                    <span
-                                                                                        class="wd-accordion-opener"></span>
-                                                                                </div>
-
-                                                                                <div class="wd-accordion-content wd-entry-content"
-                                                                                    data-accordion-index="2">
-
-                                                                                    <p>How can you evaluate content
-                                                                                        without design? No typography,
-                                                                                        no colors, no layout, no styles,
-                                                                                        all those things that convey the
-                                                                                        important signals that go beyond
-                                                                                        the mere textual, hierarchies of
-                                                                                        information, weight.</p>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="wd-accordion-item">
-                                                                                <div class="wd-accordion-title"
-                                                                                    data-accordion-index="3">
-                                                                                    <div
-                                                                                        class="wd-accordion-title-text">
-                                                                                        <span>
-                                                                                            Is next-day delivery
-                                                                                            available on all orders?
-                                                                                        </span>
-                                                                                    </div>
-                                                                                    <span
-                                                                                        class="wd-accordion-opener"></span>
-                                                                                </div>
-
-                                                                                <div class="wd-accordion-content wd-entry-content"
-                                                                                    data-accordion-index="3">
-
-                                                                                    <p>To short sentences, to many
-                                                                                        headings, images too large for
-                                                                                        the proposed design, or too
-                                                                                        small, or they fit in but it
-                                                                                        looks iffy for reasons the folks
-                                                                                        in the meeting can’t quite tell
-                                                                                        right now, but they’re unhappy,
-                                                                                        somehow.</p>
-                                                                                </div>
-                                                                            </div>
-
-                                                                            <div class="wd-accordion-item">
-                                                                                <div class="wd-accordion-title"
-                                                                                    data-accordion-index="4">
-                                                                                    <div
-                                                                                        class="wd-accordion-title-text">
-                                                                                        <span>
-                                                                                            Do I need to be there to
-                                                                                            sign for delivery? </span>
-                                                                                    </div>
-                                                                                    <span
-                                                                                        class="wd-accordion-opener"></span>
-                                                                                </div>
-
-                                                                                <div class="wd-accordion-content wd-entry-content"
-                                                                                    data-accordion-index="4">
-
-                                                                                    <p>How can you evaluate content
-                                                                                        without design? No typography,
-                                                                                        no colors, no layout, no styles,
-                                                                                        all those things that convey the
-                                                                                        important signals that go beyond
-                                                                                        the mere textual, hierarchies of
-                                                                                        information, weight.</p>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </section>
+                                             
                                             </div>
                                         </div>
                                     </div>
                                 </section>
                             </div>
                         </div>
+                    </div>
+                    <div class="wd-content-area site-content">
+                        <!-- Form nhập thông tin liên hệ -->
+                        <div class="elementor-widget-wrap elementor-element-populated">
+
+                        <div class="wd-negative-gap elementor-section elementor-inner-section elementor-element elementor-element-4e3ba00 elementor-section-boxed elementor-section-height-default elementor-section-height-default">
+<form wire:submit.prevent="submitContact" style="
+background: white;
+padding: 10px;
+border-radius: 1rem;
+gap: 1rem;
+display: flex;
+flex-direction: column;
+">
+<style>
+    form label {
+    color: var(--wd-title-color);
+    text-transform: uppercase;
+    font-size: inherit;
+    font-weight: var(--wd-title-font-weight);
+    font-style: var(--wd-title-font-style);
+    font-family: var(--wd-title-font);
+    vertical-align: middle;
+    text-align: start;
+    }
+</style>
+    <div>
+        <label for="name">Họ và Tên:</label>
+        <input type="text" id="name" wire:model="name" required>
+        @error('name') <span class="error">{{ $message }}</span> @enderror
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" wire:model="email" required>
+        @error('email') <span class="error">{{ $message }}</span> @enderror
+    </div>
+
+    <div>
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" wire:model="phone" required>
+        @error('phone') <span class="error">{{ $message }}</span> @enderror
+    </div>
+
+    <div>
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" wire:model="address" required>
+        @error('address') <span class="error">{{ $message }}</span> @enderror
+    </div>
+
+    <div>
+        <label for="note">Ghi chú:</label>
+        <textarea id="note" wire:model="note"></textarea>
+    </div>
+
+    <button type="submit">Gửi thông tin</button>
+</form>
+</div>
+</div>
+
                     </div>
                 </main>
 
@@ -2374,38 +1779,7 @@
         </div>
 
         <script src="https://sp.zalo.me/plugins/sdk.js"></script>
-        <div class="wd-toolbar wd-toolbar-label-show">
-            <div class="wd-header-mobile-nav whb-wd-header-mobile-nav mobile-style-icon wd-tools-element">
-                <a href="#" rel="nofollow">
-                    <span class="wd-tools-icon"></span>
-                    <span class="wd-toolbar-label">
-                        Menu </span>
-                </a>
-            </div>
-            <div class="wd-toolbar-home wd-toolbar-item wd-tools-element">
-                <a href="https://shop.phanhoanggia.com">
-                    <span class="wd-tools-icon"></span>
-                    <span class="wd-toolbar-label">
-                        Home </span>
-                </a>
-            </div>
-            <div class="wd-header-cart wd-tools-element wd-design-5 cart-widget-opener" title="My cart">
-                <a href="/assets/gio-hang/">
-                    <span class="wd-tools-icon">
-                        <span class="wd-cart-number wd-tools-count">1 <span>item</span></span>
-                    </span>
-                    <span class="wd-toolbar-label">
-                        Cart </span>
-                </a>
-            </div>
-            <div class="wd-header-my-account wd-tools-element wd-style-icon  login-side-opener">
-                <a href="/assets/tai-khoan/">
-                    <span class="wd-tools-icon"></span>
-                    <span class="wd-toolbar-label">
-                        My account </span>
-                </a>
-            </div>
-        </div>
+       
         <script>
             const lazyloadRunObserver = () => {
                 const lazyloadBackgrounds = document.querySelectorAll(`.e-con.e-parent:not(.e-lazyloaded)`);

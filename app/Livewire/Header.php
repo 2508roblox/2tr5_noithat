@@ -3,11 +3,13 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Session;
 use App\Models\Category;
 
 class Header extends Component
 {
     public $categories;
+    public $cartCount = 0;
 
     public function mount()
     {
@@ -18,12 +20,21 @@ class Header extends Component
             'subCategories.childSubCategories',
             'products'
         ])->get();
+
+        $this->updateCartCount();
+    }
+
+    protected function updateCartCount()
+    {
+        $cart = Session::get('cart', []);
+        $this->cartCount = array_sum(array_column($cart, 'quantity'));
     }
 
     public function render()
     {
         return view('livewire.header', [
-            'categories' => $this->categories
+            'categories' => $this->categories,
+            'cartCount' => $this->cartCount
         ]);
     }
 }
