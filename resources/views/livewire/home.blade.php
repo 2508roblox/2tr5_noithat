@@ -331,7 +331,7 @@
                                                                                                             data-columns="4"
                                                                                                             data-grid-gallery="{&quot;grid_gallery&quot;:&quot;1&quot;,&quot;grid_gallery_control&quot;:&quot;hover&quot;,&quot;grid_gallery_enable_arrows&quot;:&quot;none&quot;}"
                                                                                                             style="--wd-col-lg:4;--wd-col-md:4;--wd-col-sm:2;--wd-gap-lg:20px;--wd-gap-sm:10px;">
-                                                                                                            @foreach ($category->products as $product)
+                                                                                                            @foreach ($category->products->take(4) as $product)
                                                                                                         {{-- sản phẩm --}}
                                                                                                             <div class="wd-product wd-with-labels wd-hover-fw-button wd-hover-with-fade wd-col product-grid-item product type-product post-23264 status-publish instock product_cat-ket-sat product_tag-ket-sat-dien-tu-samurai-me03 has-post-thumbnail sale shipping-taxable purchasable product-type-simple"
                                                                                                                 data-loop="1"
