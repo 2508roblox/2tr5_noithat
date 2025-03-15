@@ -43,6 +43,7 @@
     @livewire('sidebar')
 
     {{ $slot }}
+    @livewire('chatbot')
     @livewire('footer')
     <style>
         @font-face {
