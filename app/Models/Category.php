@@ -20,4 +20,25 @@ class Category extends Model
     {
         return $this->hasMany(Product::class, 'category_id');
     }
+
+    public static function getProductsBySlug($slug)
+    {
+        $category = self::where('slug', $slug)->first();
+        
+        if ($category) {
+            return $category->products;
+        }
+
+        $subCategory = SubCategory::where('slug', $slug)->first();
+        if ($subCategory) {
+            return $subCategory->products;
+        }
+
+        $childSubCategory = ChildSubCategory::where('slug', $slug)->first();
+        if ($childSubCategory) {
+            return Product::where('child_sub_category_id', $childSubCategory->id)->get();
+        }
+
+        return collect([]);
+    }
 }

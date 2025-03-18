@@ -29,21 +29,38 @@ class Category extends Component
 
         // Nếu tìm thấy danh mục, lấy danh sách sản phẩm tương ứng
         if ($this->category) {
-            $this->products = Product::where(function ($query) {
-                $query->where('category_id', $this->category->id)
-                      ->orWhere('sub_category_id', $this->category->id)
-                      ->orWhere('child_sub_category_id', $this->category->id);
-            })->paginate(12);
+            $query = Product::query();
+            
+            if ($this->category instanceof MainCategory) {
+                $query->where('category_id', $this->category->id);
+            } elseif ($this->category instanceof SubCategory) {
+                $query->where('sub_category_id', $this->category->id);
+            } elseif ($this->category instanceof ChildSubCategory) {
+                $query->where('child_sub_category_id', $this->category->id);
+            }
+
+            $this->products = $query->paginate(12);
         }
-        $this->discountedProducts = Product::where(function ($query) {
-            $query->where('category_id', $this->category->id)
-                  ->orWhere('sub_category_id', $this->category->id)
-                  ->orWhere('child_sub_category_id', $this->category->id);
-        })
-        ->where('discounted_price', '>', 0)
-        ->orderBy('discounted_price', 'asc') // Sắp xếp giá giảm dần
-        ->limit(2)
-        ->get();
+
+        // Lấy sản phẩm giảm giá
+        if ($this->category) {
+            $query = Product::query();
+            
+            if ($this->category instanceof MainCategory) {
+                $query->where('category_id', $this->category->id);
+            } elseif ($this->category instanceof SubCategory) {
+                $query->where('sub_category_id', $this->category->id);
+            } elseif ($this->category instanceof ChildSubCategory) {
+                $query->where('child_sub_category_id', $this->category->id);
+            }
+
+            $this->discountedProducts = $query
+                ->where('discounted_price', '>', 0)
+                ->orderBy('discounted_price', 'asc')
+                ->limit(2)
+                ->get();
+        }
+
         $this->minPrice = $request->query('min_price');
         $this->maxPrice = $request->query('max_price');
 
@@ -111,44 +128,50 @@ class Category extends Component
         }
     }
     public function getProducts()
-{
-    if (!$this->category) {
-        return Product::whereNull('id')->paginate(12); // Trả về danh sách rỗng có phân trang
-    }
+    {
+        if (!$this->category) {
+            return Product::whereNull('id')->paginate(12);
+        }
 
-    $query = Product::where(function ($query) {
-        $query->where('category_id', $this->category->id)
-            ->orWhere('sub_category_id', $this->category->id)
-            ->orWhere('child_sub_category_id', $this->category->id);
-    });
+        $query = Product::query();
 
-    if ($this->minPrice !== null) {
-        $query->where('discounted_price', '>=', $this->minPrice);
-    }
-    if ($this->maxPrice !== null) {
-        $query->where('discounted_price', '<=', $this->maxPrice);
-    }
+        // Xác định loại danh mục và chỉ lấy sản phẩm tương ứng
+        if ($this->category instanceof MainCategory) {
+            $query->where('category_id', $this->category->id);
+        } elseif ($this->category instanceof SubCategory) {
+            $query->where('sub_category_id', $this->category->id);
+        } elseif ($this->category instanceof ChildSubCategory) {
+            $query->where('child_sub_category_id', $this->category->id);
+        }
 
-    switch ($this->sortBy) {
-        case 'popularity':
-            $query->orderBy('views', 'desc');
-            break;
-        case 'rating':
-            $query->orderBy('rating', 'desc');
-            break;
-        case 'date':
-            $query->orderBy('created_at', 'desc');
-            break;
-        case 'price':
-            $query->orderBy('discounted_price', 'asc');
-            break;
-        case 'price-desc':
-            $query->orderBy('discounted_price', 'desc');
-            break;
-    }
+        // Lọc theo giá nếu có giá trị
+        if ($this->minPrice !== null) {
+            $query->where('discounted_price', '>=', $this->minPrice);
+        }
+        if ($this->maxPrice !== null) {
+            $query->where('discounted_price', '<=', $this->maxPrice);
+        }
 
-    return $query->paginate(12); // Luôn trả về một Paginator
-}
+        switch ($this->sortBy) {
+            case 'popularity':
+                $query->orderBy('views', 'desc');
+                break;
+            case 'rating':
+                $query->orderBy('rating', 'desc');
+                break;
+            case 'date':
+                $query->orderBy('created_at', 'desc');
+                break;
+            case 'price':
+                $query->orderBy('discounted_price', 'asc');
+                break;
+            case 'price-desc':
+                $query->orderBy('discounted_price', 'desc');
+                break;
+        }
+
+        return $query->paginate(12);
+    }
 
     public function updated($property)
     {
